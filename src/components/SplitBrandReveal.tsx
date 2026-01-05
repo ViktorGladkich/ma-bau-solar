@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-import bgImage from "../assets/bgImage.jpg";
+import bgImage from "../assets/bgImage.webp";
 const column1 = [
   "/projects/78kWp_Berlin.jpg",
   "/projects/499kWp_schwaebisch.jpg",

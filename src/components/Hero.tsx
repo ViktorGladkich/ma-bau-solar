@@ -2,7 +2,9 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-import heroVideo from "../assets/hero-solar.mp4";
+
+const heroVideo =
+  "https://res.cloudinary.com/dcphhfemb/video/upload/v1767643382/hero_vyelws.mp4";
 
 export const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);

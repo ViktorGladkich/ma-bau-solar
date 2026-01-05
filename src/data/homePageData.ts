@@ -79,7 +79,7 @@ export const materials: Material[] = [
 ];
 
 export const zoomImages: ZoomImage[] = [
-  { src: "/zoomImages/zoom1.png", alt: "Moderne Solaranlage" },
+  { src: "/zoomImages/zoom1.webp", alt: "Moderne Solaranlage" },
   { src: "/zoomImages/zoom2.jpg", alt: "Wood Detail" },
   { src: "/zoomImages/zoom3.jpg", alt: "Light Installation" },
   { src: "/zoomImages/zoom4.jpg", alt: "Curved Wood" },

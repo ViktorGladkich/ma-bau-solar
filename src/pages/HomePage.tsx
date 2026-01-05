@@ -9,7 +9,7 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 import { SEO } from "../components/SEO";
 import { ZoomParallax } from "../components/ui/zoom-parallax";
 import { SplitBrandReveal } from "../components/SplitBrandReveal";
-import footerBanner from "../assets/footerBanner.png";
+import footerBanner from "../assets/footerBanner.webp";
 import { processSteps, materials, zoomImages } from "../data/homePageData";
 
 export const HomePage: React.FC = () => {

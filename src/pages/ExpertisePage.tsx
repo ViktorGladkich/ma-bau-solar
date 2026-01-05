@@ -22,13 +22,13 @@ const processes = [
     id: "03",
     title: "Montage & Installation",
     text: "Unsere erfahrenen Montageteams arbeiten mit höchster Präzision. Ob Freifläche oder Dach – wir installieren fachgerecht und termingerecht. Qualität und Sicherheit stehen dabei immer an erster Stelle.",
-    image: "/processSteps/produktion.jpg",
+    image: "/processSteps/montage.jpg",
   },
   {
     id: "04",
     title: "Inbetriebnahme & Service",
     text: "Eine Solaranlage ist eine langfristige Investition. Wir übernehmen die professionelle Inbetriebnahme, Netzanmeldung und bieten zuverlässigen Service für dauerhaft optimale Erträge.",
-    image: "/processSteps/logistik_Montage.jpg",
+    image: "/processSteps/Inbetriebnahme_Service.jpg",
   },
 ];
 
