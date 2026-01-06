@@ -108,7 +108,7 @@ export const ProjectsPage: React.FC = () => {
     <>
       <SEO
         title="Projekte"
-        description="Unsere realisierten Photovoltaik-Projekte in Berlin und Brandenburg. Solaranlagen für Gewerbe, Industrie und Landwirtschaft."
+        description="Unsere realisierten Photovoltaik-Projekte in Deutschland und Europa. Solaranlagen für Gewerbe, Industrie und Landwirtschaft."
       />
       <div
         ref={containerRef}

@@ -181,7 +181,7 @@ export const ContactPage: React.FC = () => {
     <>
       <SEO
         title="Kontakt"
-        description="Kontaktieren Sie MA Bau GmbH für Ihre Photovoltaik-Projekte. Beratung, Planung und Installation von Solaranlagen in Berlin und Brandenburg."
+        description="Kontaktieren Sie MA Bau GmbH für Ihre Photovoltaik-Projekte. Beratung, Planung und Installation von Solaranlagen in ganz Deutschland und Europa."
       />
       <div
         ref={containerRef}
