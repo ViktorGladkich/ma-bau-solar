@@ -1,73 +1,98 @@
-# React + TypeScript + Vite
+# MA Bau GmbH – Corporate Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern, responsive corporate website for **MA Bau GmbH** – a specialist in photovoltaic installation across Germany and Europe.
 
-Currently, two official plugins are available:
+🌐 **Live:** [mabaugmbh.de](https://mabaugmbh.de)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **AI Chatbot** – Powered by Google Gemini 2.5 Flash for customer inquiries
+- **WhatsApp Integration** – Quick contact button for instant communication
+- **Contact Form** – Web3Forms integration for reliable email delivery
+- **Responsive Design** – Optimized for all devices (mobile, tablet, desktop)
+- **Smooth Animations** – GSAP & Framer Motion for premium UX
+- **SEO Optimized** – Meta tags, sitemap.xml, robots.txt, structured data
+- **DSGVO Compliant** – Full German privacy law compliance
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+| Technology       | Purpose           |
+| ---------------- | ----------------- |
+| React 19         | UI Framework      |
+| TypeScript       | Type Safety       |
+| Vite             | Build Tool        |
+| Tailwind CSS     | Styling           |
+| GSAP             | Scroll Animations |
+| Framer Motion    | UI Animations     |
+| Google Gemini    | AI Chatbot        |
+| Web3Forms        | Contact Form      |
+| Cloudflare Pages | Hosting           |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js 18+
+- npm or yarn
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/ViktorGladkich/ma-bau-solar.git
+cd ma-bau-solar/liebscher-portfolio
+
+# Install dependencies
+npm install
+
+# Create environment file
+cp .env.example .env
+# Add your VITE_GEMINI_API_KEY to .env
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Build for Production
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/     # Reusable UI components
+│   ├── chat/       # AI Chatbot components
+│   └── ui/         # Base UI components
+├── pages/          # Page components
+├── data/           # Static data & configurations
+├── hooks/          # Custom React hooks
+└── lib/            # Utilities & helpers
+```
+
+## 🔐 Environment Variables
+
+| Variable              | Description                       |
+| --------------------- | --------------------------------- |
+| `VITE_GEMINI_API_KEY` | Google Gemini API key for chatbot |
+
+## 📊 Company Info
+
+- **Company:** MA Bau GmbH
+- **Location:** Dresden, Germany
+- **Service Area:** Germany & Europe
+- **Specialization:** Photovoltaic installation (rooftops & ground-mounted)
+- **Capacity Installed:** 42+ MWp
+- **Projects Completed:** 100+
+
+## 📄 License
+
+Private project. All rights reserved.
+
+## 📞 Contact
+
+- **Website:** [mabaugmbh.de](https://mabaugmbh.de)
+- **Email:** info@ma-bau-gmbh.de
+- **Phone:** +49 176 32187740
