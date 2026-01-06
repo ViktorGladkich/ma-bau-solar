@@ -143,8 +143,8 @@ export const SplitBrandReveal: React.FC = () => {
                 />
               </div>
             ))}
-            {/* Duplicate only on desktop for seamless loop */}
-            <div className="hidden md:contents">
+            {/* Duplicate for seamless loop */}
+            <div className="contents">
               {column1.map((src, i) => (
                 <div
                   key={`dup-${i}`}
@@ -176,8 +176,8 @@ export const SplitBrandReveal: React.FC = () => {
                 />
               </div>
             ))}
-            {/* Duplicate only on desktop */}
-            <div className="hidden md:contents">
+            {/* Duplicate for seamless loop */}
+            <div className="contents">
               {column2.map((src, i) => (
                 <div
                   key={`dup-${i}`}
@@ -209,8 +209,8 @@ export const SplitBrandReveal: React.FC = () => {
                 />
               </div>
             ))}
-            {/* Duplicate only on desktop */}
-            <div className="hidden md:contents">
+            {/* Duplicate for seamless loop */}
+            <div className="contents">
               {column3.map((src, i) => (
                 <div
                   key={`dup-${i}`}
@@ -231,7 +231,7 @@ export const SplitBrandReveal: React.FC = () => {
         {/* Central Manifesto Overlay */}
         <div className="max-w-5xl relative z-30 text-center px-4 sm:px-6 md:px-6 mix-blend-screen">
           <span className="block text-accent text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.3em] mb-3 sm:mb-4 md:mb-12 opacity-80">
-            The Inner Circle
+            Das Manifest
           </span>
 
           <h2 className="text-base sm:text-xl md:text-5xl lg:text-6xl font-serif text-[#EAE7DF] leading-relaxed sm:leading-relaxed md:leading-tight drop-shadow-2xl">
