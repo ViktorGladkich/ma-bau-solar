@@ -10,15 +10,15 @@ const column1 = [
 ];
 
 const column2 = [
-  "/zoomImages/zoom3.jpg",
-  "/zoomImages/zoom4.jpg",
-  "/zoomImages/zoom6.jpg",
+  "/projects/einkaufszentrum.jpg",
+  "/processSteps/Inbetriebnahme_Service.jpg",
+  "/projects/freiflaeche4.jpg",
 ];
 
 const column3 = [
   "/materials/solarmodule.jpg",
-  "/zoomImages/zoom5.jpg",
-  "/zoomImages/zoom2.jpg",
+  "/projects/produktionshalle4.jpg",
+  "/projects/lagerhalle4.jpg",
 ];
 
 export const SplitBrandReveal: React.FC = () => {
@@ -44,8 +44,8 @@ export const SplitBrandReveal: React.FC = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: isMobile ? "+=150%" : "+=300%", // Shorter scroll on mobile
-          scrub: isMobile ? 0.5 : 1, // Smoother scrub on mobile
+          end: isMobile ? "+=150%" : "+=300%", 
+          scrub: isMobile ? 0.5 : 1, 
           pin: true,
           anticipatePin: 1,
         },
@@ -73,7 +73,7 @@ export const SplitBrandReveal: React.FC = () => {
       // 3. Vertical Carousel Parallax - Reduced on mobile for performance
       const parallaxAmount = isMobile ? -20 : -40;
 
-      // Column 1 & 3 move UP
+      
       tl.fromTo(
         ".col-move-up",
         { yPercent: 0 },
@@ -130,7 +130,7 @@ export const SplitBrandReveal: React.FC = () => {
         {/* Background Grid Columns - Hidden on very small screens for performance */}
         <div className="absolute inset-0 grid grid-cols-3 gap-1 md:gap-8 px-1 md:px-8 opacity-20 md:opacity-30 pointer-events-none">
           {/* Column 1 */}
-          <div className="col-move-up flex flex-col gap-1 md:gap-8 pt-[10vh] md:pt-[20vh] will-change-transform">
+          <div className="col-move-up flex flex-col gap-1 md:gap-8 pt-[120px] md:pt-[20vh] will-change-transform">
             {column1.map((src, i) => (
               <div
                 key={i}
@@ -196,7 +196,7 @@ export const SplitBrandReveal: React.FC = () => {
           </div>
 
           {/* Column 3 */}
-          <div className="col-move-up flex flex-col gap-1 md:gap-8 pt-[5vh] md:pt-[10vh] will-change-transform">
+          <div className="col-move-up flex flex-col gap-1 md:gap-8 pt-[100px] md:pt-[10vh] will-change-transform">
             {column3.map((src, i) => (
               <div
                 key={i}
