@@ -133,7 +133,7 @@ export const ContactPage: React.FC = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with your Web3Forms access key
+          access_key: "97c8a12c-794f-42ed-80b9-9a495f5a9bc3",
           to: "info@ma-bau-gmbh.de",
           from_name: `${formData.firstName} ${formData.lastName}`,
           subject: `Neue Anfrage von ${formData.firstName} ${
