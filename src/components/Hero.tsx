@@ -147,8 +147,8 @@ export const Hero: React.FC = () => {
         <div className="mobile-hero-content relative z-20 text-secondary mb-4">
           <div className="flex items-center gap-3 mb-6 opacity-80">
             <div className="h-[1px] w-8 bg-accent"></div>
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">
-              Mobau Gmbh
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] bg-accent">
+              MA Bau GmbH – Photovoltaik
             </span>
           </div>
 

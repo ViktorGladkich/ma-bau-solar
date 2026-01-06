@@ -44,8 +44,8 @@ export const SplitBrandReveal: React.FC = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: isMobile ? "+=150%" : "+=300%", 
-          scrub: isMobile ? 0.5 : 1, 
+          end: isMobile ? "+=150%" : "+=300%",
+          scrub: isMobile ? 0.5 : 1,
           pin: true,
           anticipatePin: 1,
         },
@@ -73,7 +73,6 @@ export const SplitBrandReveal: React.FC = () => {
       // 3. Vertical Carousel Parallax - Reduced on mobile for performance
       const parallaxAmount = isMobile ? -20 : -40;
 
-      
       tl.fromTo(
         ".col-move-up",
         { yPercent: 0 },
@@ -123,7 +122,7 @@ export const SplitBrandReveal: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen w-full overflow-hidden bg-[#1C1C1C] will-change-transform"
+      className="relative h-screen w-full overflow-hidden bg-[#1C1C1C] will-change-transform z-[60]"
     >
       {/* --- THE HIDDEN CONTENT (REVEALED BEHIND) --- */}
       <div className="reveal-content absolute inset-0 z-0 flex flex-col items-center justify-center overflow-hidden">
