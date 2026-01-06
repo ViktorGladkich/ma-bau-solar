@@ -7,10 +7,9 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { SEO } from "../components/SEO";
-import { ZoomParallax } from "../components/ui/zoom-parallax";
 import { SplitBrandReveal } from "../components/SplitBrandReveal";
 import footerBanner from "../assets/footerBanner.webp";
-import { processSteps, materials, zoomImages } from "../data/homePageData";
+import { processSteps, materials } from "../data/homePageData";
 
 export const HomePage: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -148,10 +147,11 @@ export const HomePage: React.FC = () => {
           </div>
         </article>
 
-        {/* Zoom Parallax Showcase */}
-        <div className="hidden md:block">
+        {/* Zoom Parallax Showcase - TEMPORARILY DISABLED */}
+        {/* <div className="hidden md:block">
           <ZoomParallax images={zoomImages} />
-        </div>
+        </div> */}
+
         {/* Premium Client Logo Carousel */}
         <section
           className="py-24 md:py-32 overflow-hidden bg-white text-primary"

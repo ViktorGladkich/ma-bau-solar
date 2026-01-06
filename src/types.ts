@@ -5,6 +5,7 @@ export interface ProjectData {
   category: string;
   year: string;
   location: string;
+  kWp: string;
   client: string;
   imageUrl: string;
   description: string;

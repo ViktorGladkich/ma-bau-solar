@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 import type { ProjectData } from "../types";
 import { projectsData } from "../lib/data";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { SEO } from "../components/SEO";
 
 export const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -80,134 +81,139 @@ export const ProjectDetail: React.FC = () => {
   }
 
   return (
-    <div ref={containerRef} className="bg-secondary min-h-[100svh] w-full">
-      {/* Hero Image */}
-      <div className="detail-hero relative w-full h-[70svh] md:h-[85svh] overflow-hidden transform-gpu">
-        <div className="absolute inset-0 bg-black/20 z-10"></div>
-        <img
-          src={project.imageUrl}
-          alt={project.title}
-          className="detail-hero-img w-full h-[120%] object-cover origin-top"
-        />
-        <div className="absolute bottom-0 left-0 w-full p-6 md:p-12 z-20 text-white mix-blend-difference">
-          <div className="container mx-auto">
-            <Link
-              to="/projects"
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest mb-8 hover:opacity-70 transition-opacity"
-            >
-              <ArrowLeft size={16} /> Zurück zur Übersicht
-            </Link>
-            <h1 className="detail-reveal text-5xl md:text-7xl lg:text-9xl font-serif leading-none">
-              {project.title}
-            </h1>
-          </div>
-        </div>
-      </div>
-
-      {/* Project Data Bar */}
-      <div className="bg-secondary border-b border-primary/10 py-8 px-6 md:px-12">
-        <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-primary">
-          <div className="detail-reveal">
-            <span className="block text-xs uppercase tracking-widest text-gray-400 mb-1">
-              Kunde
-            </span>
-            <span className="text-lg font-serif">{project.client}</span>
-          </div>
-          <div className="detail-reveal">
-            <span className="block text-xs uppercase tracking-widest text-gray-400 mb-1">
-              Ort
-            </span>
-            <span className="text-lg font-serif">{project.location}</span>
-          </div>
-          <div className="detail-reveal">
-            <span className="block text-xs uppercase tracking-widest text-gray-400 mb-1">
-              Jahr
-            </span>
-            <span className="text-lg font-serif">{project.year}</span>
-          </div>
-          <div className="detail-reveal">
-            <span className="block text-xs uppercase tracking-widest text-gray-400 mb-1">
-              Kategorie
-            </span>
-            <span className="text-lg font-serif">{project.category}</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Description Section */}
-      <div className="container mx-auto px-6 md:px-12 py-24 md:py-32">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
-          <div className="lg:w-1/3">
-            <h2 className="text-3xl font-serif mb-8 text-primary">
-              Die Aufgabe
-            </h2>
-            <p className="text-gray-600 font-light leading-relaxed text-lg">
-              {project.challenge}
-            </p>
-          </div>
-          <div className="lg:w-2/3">
-            <h2 className="text-3xl font-serif mb-8 text-primary">
-              Unsere Lösung
-            </h2>
-            <p className="text-primary font-serif text-2xl md:text-3xl leading-snug mb-8">
-              "{project.solution}"
-            </p>
-            <p className="text-gray-600 font-light leading-relaxed text-lg">
-              {project.description}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Image Gallery */}
-      <div className="container mx-auto px-6 md:px-12 pb-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {project.gallery &&
-            project.gallery.map((img: string, index: number) => (
-              <div
-                key={index}
-                className={`gallery-img-wrapper relative overflow-hidden bg-gray-200 ${
-                  index % 3 === 0
-                    ? "md:col-span-2 aspect-[16/9]"
-                    : "aspect-[4/5]"
-                }`}
-              >
-                <img
-                  src={img}
-                  alt={`Gallery ${index}`}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-            ))}
-        </div>
-      </div>
-
-      {/* Next Project Footer */}
-      {nextProject && (
-        <Link
-          to={`/projects/${nextProject.id}`}
-          className="block relative group h-[40vh] overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-black/30 transition-colors"></div>
+    <>
+      <SEO title={project.title} description={project.description} />
+      <div ref={containerRef} className="bg-secondary min-h-[100svh] w-full">
+        {/* Hero Image */}
+        <div className="detail-hero relative w-full h-[70svh] md:h-[85svh] overflow-hidden transform-gpu">
+          <div className="absolute inset-0 bg-black/20 z-10"></div>
           <img
-            src={nextProject.imageUrl}
-            className="w-full h-full object-cover"
-            alt="Nächstes Projekt"
+            src={project.imageUrl}
+            alt={project.title}
+            className="detail-hero-img w-full h-[120%] object-cover origin-top"
           />
-          <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-white">
-            <span className="text-xs uppercase tracking-widest mb-4 opacity-70">
-              Nächstes Projekt
-            </span>
-            <h2 className="text-5xl md:text-7xl font-serif italic group-hover:scale-110 transition-transform duration-500">
-              {nextProject.title}
-            </h2>
-            <div className="mt-8 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 duration-300">
-              <span className="text-xs uppercase tracking-widest">Ansehen</span>
-              <ArrowRight size={16} />
+          <div className="absolute bottom-0 left-0 w-full p-6 md:p-12 z-20 text-white mix-blend-difference">
+            <div className="container mx-auto">
+              <Link
+                to="/projects"
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest mb-8 hover:opacity-70 transition-opacity"
+              >
+                <ArrowLeft size={16} /> Zurück zur Übersicht
+              </Link>
+              <h1 className="detail-reveal text-5xl md:text-7xl lg:text-9xl font-serif leading-none">
+                {project.title}
+              </h1>
             </div>
           </div>
-        </Link>
-      )}
-    </div>
+        </div>
+
+        {/* Project Data Bar */}
+        <div className="bg-secondary border-b border-primary/10 py-8 px-6 md:px-12">
+          <div className="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-primary">
+            <div className="detail-reveal">
+              <span className="block text-xs uppercase tracking-widest text-gray-400 mb-1">
+                Leistung
+              </span>
+              <span className="text-lg font-serif">{project.kWp}</span>
+            </div>
+            <div className="detail-reveal">
+              <span className="block text-xs uppercase tracking-widest text-gray-400 mb-1">
+                Ort
+              </span>
+              <span className="text-lg font-serif">{project.location}</span>
+            </div>
+            <div className="detail-reveal">
+              <span className="block text-xs uppercase tracking-widest text-gray-400 mb-1">
+                Jahr
+              </span>
+              <span className="text-lg font-serif">{project.year}</span>
+            </div>
+            <div className="detail-reveal">
+              <span className="block text-xs uppercase tracking-widest text-gray-400 mb-1">
+                Kategorie
+              </span>
+              <span className="text-lg font-serif">{project.category}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Description Section */}
+        <div className="container mx-auto px-6 md:px-12 py-24 md:py-32">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
+            <div className="lg:w-1/3">
+              <h2 className="text-3xl font-serif mb-8 text-primary">
+                Die Aufgabe
+              </h2>
+              <p className="text-gray-600 font-light leading-relaxed text-lg">
+                {project.challenge}
+              </p>
+            </div>
+            <div className="lg:w-2/3">
+              <h2 className="text-3xl font-serif mb-8 text-primary">
+                Unsere Lösung
+              </h2>
+              <p className="text-primary font-serif text-2xl md:text-3xl leading-snug mb-8">
+                "{project.solution}"
+              </p>
+              <p className="text-gray-600 font-light leading-relaxed text-lg">
+                {project.description}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Image Gallery */}
+        <div className="container mx-auto px-6 md:px-12 pb-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {project.gallery &&
+              project.gallery.map((img: string, index: number) => (
+                <div
+                  key={index}
+                  className={`gallery-img-wrapper relative overflow-hidden bg-gray-200 ${
+                    index % 3 === 0
+                      ? "md:col-span-2 aspect-[16/9]"
+                      : "aspect-[4/5]"
+                  }`}
+                >
+                  <img
+                    src={img}
+                    alt={`Gallery ${index}`}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              ))}
+          </div>
+        </div>
+
+        {/* Next Project Footer */}
+        {nextProject && (
+          <Link
+            to={`/projects/${nextProject.id}`}
+            className="block relative group h-[40vh] overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-black/30 transition-colors"></div>
+            <img
+              src={nextProject.imageUrl}
+              className="w-full h-full object-cover"
+              alt="Nächstes Projekt"
+            />
+            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-white">
+              <span className="text-xs uppercase tracking-widest mb-4 opacity-70">
+                Nächstes Projekt
+              </span>
+              <h2 className="text-5xl md:text-7xl font-serif italic group-hover:scale-110 transition-transform duration-500">
+                {nextProject.title}
+              </h2>
+              <div className="mt-8 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 duration-300">
+                <span className="text-xs uppercase tracking-widest">
+                  Ansehen
+                </span>
+                <ArrowRight size={16} />
+              </div>
+            </div>
+          </Link>
+        )}
+      </div>
+    </>
   );
 };

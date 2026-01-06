@@ -183,7 +183,7 @@ export const ExpertisePage: React.FC = () => {
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-[#111]/70 to-[#111]/30 z-10" />
             <img
-              src="/projects/ecoStand2.jpg"
+              src="/projects/logistikzentrum.jpg"
               className="w-full h-full object-cover opacity-80"
               alt="Hintergrund"
             />

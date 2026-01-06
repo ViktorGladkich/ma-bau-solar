@@ -21,33 +21,33 @@ export interface Award {
 
 export const milestones: Milestone[] = [
   {
-    year: "2015",
+    year: "2020",
     title: "Gründung",
-    desc: "MA Bau GmbH wird gegründet mit Fokus auf Bauleistungen im Bereich erneuerbare Energien.",
+    desc: "MA Bau GmbH wird in Berlin gegründet mit Fokus auf Photovoltaik-Montage.",
     img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2670&auto=format&fit=crop",
   },
   {
-    year: "2018",
-    title: "Solar-Spezialisierung",
-    desc: "Strategische Ausrichtung auf Photovoltaik-Projekte. Erste Großanlagen auf Freiflächen realisiert.",
+    year: "2021",
+    title: "Erste Großprojekte",
+    desc: "Erfolgreiche Realisierung erster Großanlagen auf Industrie- und Gewerbedächern in Berlin.",
     img: "https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=2574&auto=format&fit=crop",
   },
   {
-    year: "2020",
-    title: "Dach-Expertise",
-    desc: "Erweiterung des Leistungsspektrums auf Industrie- und Gewerbedächer. Partnerschaften mit führenden Modulherstellern.",
+    year: "2022",
+    title: "Expansion",
+    desc: "Erweiterung auf Freiflächenanlagen. Partnerschaften mit führenden Modulherstellern etabliert.",
     img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2664&auto=format&fit=crop",
   },
   {
-    year: "2023",
+    year: "2024",
     title: "Wachstum",
-    desc: "Ausbau der Montagekapazitäten. Über 50 erfolgreich realisierte Solarprojekte deutschlandweit.",
+    desc: "Ausbau der Montagekapazitäten und des Teams. Über 100 erfolgreich realisierte Solarprojekte.",
     img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop",
   },
   {
     year: "2025",
     title: "Zukunft",
-    desc: "Weiterentwicklung als Full-Service-Partner für Photovoltaik-Projekte jeder Größenordnung.",
+    desc: "Weiterentwicklung als Full-Service-Partner für Photovoltaik-Projekte jeder Größenordnung. Über 42 MWp installierte Leistung.",
     img: "https://images.unsplash.com/photo-1473876637954-4b493d59fd97?q=80&w=2568&auto=format&fit=crop",
   },
 ];
@@ -82,11 +82,11 @@ export const team: TeamMember[] = [
 
 export const awards: Award[] = [
   {
-    year: "2023",
-    name: "German Design Award",
-    category: "Ausgezeichnete Qualität",
+    year: "2024",
+    name: "42+ MWp",
+    category: "Installierte Leistung gesamt",
   },
-  { year: "2022", name: "iF Design Award", category: "Fair Construction" },
-  { year: "2021", name: "Red Dot", category: "Spatial Communication" },
-  { year: "2019", name: "BrandEx Award", category: "Best Stand L" },
+  { year: "2024", name: "22 MWp", category: "Größte Freiflächenanlage" },
+  { year: "2024", name: "850 kWp", category: "Größte Dachanlage" },
+  { year: "2020-2025", name: "100+", category: "Realisierte Projekte" },
 ];

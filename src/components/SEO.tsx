@@ -5,19 +5,19 @@ interface SEOProps {
   description: string;
   url?: string;
   image?: string;
+  keywords?: string;
 }
 
-export const SEO: React.FC<SEOProps> = ({ title, description, url, image }) => {
+export const SEO: React.FC<SEOProps> = ({
+  title,
+  description,
+  url,
+  image,
+  keywords,
+}) => {
   useEffect(() => {
-    document.title = `${title} | MA Bau GmbH`;
-
-    let metaDescription = document.querySelector("meta[name='description']");
-    if (!metaDescription) {
-      metaDescription = document.createElement("meta");
-      metaDescription.setAttribute("name", "description");
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", description);
+    // Title with brand
+    document.title = `${title} | MA Bau GmbH – Photovoltaik Berlin`;
 
     // Helper function to create or update meta tags
     const updateMetaTag = (
@@ -35,8 +35,31 @@ export const SEO: React.FC<SEOProps> = ({ title, description, url, image }) => {
       element.setAttribute("content", content);
     };
 
+    // Basic meta tags
+    updateMetaTag(
+      "meta[name='description']",
+      "name",
+      "description",
+      description
+    );
+
+    // Keywords
+    const defaultKeywords =
+      "Photovoltaik Berlin, Solaranlage, PV-Anlage, Solarmontage, MA Bau GmbH";
+    updateMetaTag(
+      "meta[name='keywords']",
+      "name",
+      "keywords",
+      keywords || defaultKeywords
+    );
+
     // OpenGraph tags
-    updateMetaTag("meta[property='og:title']", "property", "og:title", title);
+    updateMetaTag(
+      "meta[property='og:title']",
+      "property",
+      "og:title",
+      `${title} | MA Bau GmbH`
+    );
     updateMetaTag(
       "meta[property='og:description']",
       "property",
@@ -44,6 +67,19 @@ export const SEO: React.FC<SEOProps> = ({ title, description, url, image }) => {
       description
     );
     updateMetaTag("meta[property='og:type']", "property", "og:type", "website");
+    updateMetaTag(
+      "meta[property='og:locale']",
+      "property",
+      "og:locale",
+      "de_DE"
+    );
+    updateMetaTag(
+      "meta[property='og:site_name']",
+      "property",
+      "og:site_name",
+      "MA Bau GmbH"
+    );
+
     if (url) {
       updateMetaTag("meta[property='og:url']", "property", "og:url", url);
     }
@@ -58,7 +94,12 @@ export const SEO: React.FC<SEOProps> = ({ title, description, url, image }) => {
       "twitter:card",
       "summary_large_image"
     );
-    updateMetaTag("meta[name='twitter:title']", "name", "twitter:title", title);
+    updateMetaTag(
+      "meta[name='twitter:title']",
+      "name",
+      "twitter:title",
+      `${title} | MA Bau GmbH`
+    );
     updateMetaTag(
       "meta[name='twitter:description']",
       "name",
@@ -73,7 +114,10 @@ export const SEO: React.FC<SEOProps> = ({ title, description, url, image }) => {
         image
       );
     }
-  }, [title, description, url, image]);
+
+    // Robots
+    updateMetaTag("meta[name='robots']", "name", "robots", "index, follow");
+  }, [title, description, url, image, keywords]);
 
   return null;
 };

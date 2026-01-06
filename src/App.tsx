@@ -8,7 +8,6 @@ import {
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { CustomCursor } from "./components/CustomCursor";
-import { CookieConsent } from "./components/CookieConsent";
 import { AIChatBot } from "./components/AIChatBot";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -88,7 +87,7 @@ const PageTransitionOverlay = () => {
       className="fixed inset-0 bg-white z-[60] pointer-events-none flex items-center justify-center"
       aria-hidden="true"
     >
-      <span className="text-accent font-serif text-2xl italic">MABau</span>
+      <span className="text-accent font-serif text-2xl italic">MA Bau</span>
     </div>
   );
 };
@@ -176,7 +175,6 @@ const AppContent: React.FC = () => {
         </Suspense>
       </main>
 
-      <CookieConsent />
       <AIChatBot />
       <Footer />
     </div>

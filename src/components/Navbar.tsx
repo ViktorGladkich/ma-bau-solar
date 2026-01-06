@@ -103,7 +103,7 @@ export const Navbar: React.FC = () => {
               }`}
             >
               <span className="text-lg md:text-2xl font-sans font-bold leading-none tracking-tight uppercase">
-                MABau
+                MA Bau
               </span>
             </div>
           </Link>
@@ -159,7 +159,7 @@ export const Navbar: React.FC = () => {
               </a>
             </div>
             <div className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} MABAU GmbH
+              © {new Date().getFullYear()} MA BAU GmbH
             </div>
           </div>
 

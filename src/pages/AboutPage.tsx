@@ -1,16 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Plus, Trophy } from "lucide-react";
 import { SEO } from "../components/SEO";
 import { Link } from "react-router-dom";
 import heroAbout from "../assets/heroAbout.jpg";
-import { milestones, team, awards } from "../data/aboutPageData";
+import { milestones, awards } from "../data/aboutPageData";
 
 export const AboutPage: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
-  const [hoveredMember, setHoveredMember] = useState<number | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -251,17 +249,17 @@ export const AboutPage: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
                 <span className="block text-xs font-bold uppercase tracking-widest text-accent mb-6">
-                  Exzellenz
+                  Unsere Leistung
                 </span>
                 <h2 className="text-4xl md:text-6xl font-serif leading-tight mb-8">
-                  Ausgezeichnetes
+                  Installierte
                   <br />
-                  Design.
+                  Kapazität.
                 </h2>
                 <p className="text-gray-400 font-light leading-relaxed max-w-md">
-                  Unsere Arbeit wird international anerkannt. Nicht für die
-                  Trophäen im Regal, sondern als Bestätigung unseres Anspruchs
-                  an Qualität und Innovation.
+                  Seit unserer Gründung haben wir über 42 MWp Solarleistung
+                  erfolgreich installiert – auf Dächern und Freiflächen in
+                  Berlin und Brandenburg.
                 </p>
               </div>
 
@@ -272,10 +270,7 @@ export const AboutPage: React.FC = () => {
                     className="flex items-center justify-between py-6 border-b border-white/10 group hover:bg-white/5 transition-colors px-4 -mx-4 rounded-sm"
                   >
                     <div className="flex items-center gap-6">
-                      <Trophy
-                        size={16}
-                        className="text-accent opacity-50 group-hover:opacity-100 transition-opacity"
-                      />
+                      <div className="w-4 h-4 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
                       <div>
                         <span className="block text-xl font-serif text-white">
                           {award.name}
@@ -295,7 +290,7 @@ export const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        {/* --- 4. TEAM (INTERACTIVE LIST) --- */}
+        {/* --- 4. TEAM (INTERACTIVE LIST) --- TEMPORARILY COMMENTED OUT
         <section className="py-24 md:py-32 bg-[#EAE7DF] text-[#111]">
           <div className="container mx-auto px-6 md:px-12">
             <div className="flex justify-between items-end mb-16 md:mb-24">
@@ -305,7 +300,6 @@ export const AboutPage: React.FC = () => {
             </div>
 
             <div className="relative">
-              {/* Team List */}
               <div className="relative z-10">
                 {team.map((member, index) => (
                   <div
@@ -334,7 +328,6 @@ export const AboutPage: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* MOBILE TEAM IMAGE (Visible only on mobile) */}
                     <div className="md:hidden mt-6 mb-2 overflow-hidden rounded-sm relative w-full aspect-[4/5] bg-gray-200">
                       <img
                         src={member.img}
@@ -350,7 +343,6 @@ export const AboutPage: React.FC = () => {
                 <div className="border-t border-[#111]/10"></div>
               </div>
 
-              {/* Floating Image (Desktop Only) */}
               <div className="hidden lg:block fixed top-1/2 right-[15vw] w-[300px] h-[400px] pointer-events-none z-20 mix-blend-multiply transform -translate-y-1/2">
                 {team.map((member, index) => (
                   <img
@@ -368,6 +360,7 @@ export const AboutPage: React.FC = () => {
             </div>
           </div>
         </section>
+        */}
 
         {/* --- 5. STATS --- */}
         <section className="py-24 md:py-32 bg-[#111] border-t border-white/5">
@@ -375,7 +368,7 @@ export const AboutPage: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8 text-center">
               <div className="flex flex-col items-center">
                 <span className="text-5xl md:text-7xl font-serif text-white mb-2 block">
-                  <span className="stat-number" data-value="25">
+                  <span className="stat-number" data-value="5">
                     0
                   </span>
                 </span>
@@ -385,33 +378,35 @@ export const AboutPage: React.FC = () => {
               </div>
               <div className="flex flex-col items-center">
                 <span className="text-5xl md:text-7xl font-serif text-white mb-2 block">
-                  <span className="stat-number" data-value="45">
+                  <span className="stat-number" data-value="42">
                     0
                   </span>
+                  +
                 </span>
                 <span className="text-[10px] md:text-xs uppercase tracking-widest text-gray-500">
-                  Experten
+                  MWp installiert
                 </span>
               </div>
               <div className="flex flex-col items-center">
                 <span className="text-5xl md:text-7xl font-serif text-white mb-2 block">
-                  <span className="stat-number" data-value="12">
-                    0
-                  </span>
-                </span>
-                <span className="text-[10px] md:text-xs uppercase tracking-widest text-gray-500">
-                  Länder
-                </span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="text-5xl md:text-7xl font-serif text-white mb-2 block">
-                  <span className="stat-number" data-value="350">
+                  <span className="stat-number" data-value="100">
                     0
                   </span>
                   +
                 </span>
                 <span className="text-[10px] md:text-xs uppercase tracking-widest text-gray-500">
                   Projekte
+                </span>
+              </div>
+              <div className="flex flex-col items-center">
+                <span className="text-5xl md:text-7xl font-serif text-white mb-2 block">
+                  <span className="stat-number" data-value="100">
+                    0
+                  </span>
+                  %
+                </span>
+                <span className="text-[10px] md:text-xs uppercase tracking-widest text-gray-500">
+                  Zufriedenheit
                 </span>
               </div>
             </div>

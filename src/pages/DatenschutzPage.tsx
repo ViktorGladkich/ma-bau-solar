@@ -28,7 +28,9 @@ export const DatenschutzPage: React.FC = () => {
               diesem Text aufgeführten Datenschutzerklärung.
             </p>
 
-            <h3 className="font-bold mb-2">Datenerfassung auf dieser Website</h3>
+            <h3 className="font-bold mb-2">
+              Datenerfassung auf dieser Website
+            </h3>
             <p className="mb-2">
               <strong>
                 Wer ist verantwortlich für die Datenerfassung auf dieser
@@ -88,21 +90,36 @@ export const DatenschutzPage: React.FC = () => {
             <p className="mb-4">
               Wir hosten die Inhalte unserer Website bei folgendem Anbieter:
             </p>
-            <h3 className="font-bold mb-2">Externes Hosting</h3>
+            <h3 className="font-bold mb-2">Cloudflare Pages</h3>
             <p className="mb-4">
-              Diese Website wird extern gehostet. Die personenbezogenen Daten,
-              die auf dieser Website erfasst werden, werden auf den Servern des
-              Hosters / der Hoster gespeichert. Hierbei kann es sich v.a. um
-              IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten,
-              Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige
-              Daten, die über eine Website generiert werden, handeln.
+              Diese Website wird bei Cloudflare, Inc. gehostet. Cloudflare ist
+              ein Unternehmen mit Sitz in den USA: 101 Townsend St, San
+              Francisco, CA 94107, USA. Cloudflare ist unter dem EU-US Data
+              Privacy Framework zertifiziert.
             </p>
             <p className="mb-4">
-              Das externe Hosting erfolgt zum Zwecke der Vertragserfüllung
-              gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs.
-              1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und
-              effizienten Bereitstellung unseres Online-Angebots durch einen
-              professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).
+              Bei jedem Zugriff auf unsere Website werden automatisch
+              Informationen erfasst, die Ihr Browser übermittelt. Diese
+              sogenannten Server-Logfiles können beinhalten: Browsertyp und
+              -version, verwendetes Betriebssystem, Referrer URL, Hostname des
+              zugreifenden Rechners, Uhrzeit der Serveranfrage und IP-Adresse.
+            </p>
+            <p className="mb-4">
+              Diese Daten werden zur Gewährleistung der Sicherheit und
+              Funktionsfähigkeit der Website verarbeitet. Die Rechtsgrundlage
+              ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).
+            </p>
+            <p className="mb-4">
+              Weitere Informationen finden Sie in der Datenschutzerklärung von
+              Cloudflare:{" "}
+              <a
+                href="https://www.cloudflare.com/privacypolicy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:underline"
+              >
+                https://www.cloudflare.com/privacypolicy/
+              </a>
             </p>
           </section>
 
@@ -138,14 +155,14 @@ export const DatenschutzPage: React.FC = () => {
             <p className="mb-4">
               MA Bau GmbH
               <br />
-              [Straße und Hausnummer]
+              Rubensweg 1
               <br />
-              [PLZ Ort]
+              01217 Dresden
               <br />
               <br />
-              Telefon: +49 173 8050 858
+              Telefon: +49 176 32187740
               <br />
-              E-Mail: info@mabau-gmbh.de
+              E-Mail: info@ma-bau-gmbh.de
             </p>
             <p className="mb-4">
               Verantwortliche Stelle ist die natürliche oder juristische Person,
@@ -169,11 +186,12 @@ export const DatenschutzPage: React.FC = () => {
               Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung
             </h3>
             <p className="mb-4">
-              Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten
-              wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1
-              lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO. Bei der Verarbeitung
-              zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen
-              erfolgt diese auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO.
+              Sofern Sie in die Datenverarbeitung eingewilligt haben,
+              verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von
+              Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO. Bei
+              der Verarbeitung zur Erfüllung eines Vertrags oder
+              vorvertraglicher Maßnahmen erfolgt diese auf Grundlage von Art. 6
+              Abs. 1 lit. b DSGVO.
             </p>
 
             <h3 className="font-bold mb-2">Widerruf Ihrer Einwilligung</h3>
@@ -230,29 +248,12 @@ export const DatenschutzPage: React.FC = () => {
               4. Datenerfassung auf dieser Website
             </h2>
 
-            <h3 className="font-bold mb-2">Cookies</h3>
+            <h3 className="font-bold mb-2">Cookies und Tracking</h3>
             <p className="mb-4">
-              Unsere Internetseiten verwenden so genannte „Cookies". Cookies sind
-              kleine Datenpakete und richten auf Ihrem Endgerät keinen Schaden
-              an. Sie werden entweder vorübergehend für die Dauer einer Sitzung
-              (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem
-              Endgerät gespeichert. Session-Cookies werden nach Ende Ihres
-              Besuchs automatisch gelöscht. Permanente Cookies bleiben auf Ihrem
-              Endgerät gespeichert, bis Sie diese selbst löschen oder eine
-              automatische Löschung durch Ihren Webbrowser erfolgt.
-            </p>
-            <p className="mb-4">
-              Cookies können von uns (First-Party-Cookies) oder von
-              Drittunternehmen stammen (sog. Third-Party-Cookies).
-              Third-Party-Cookies ermöglichen die Einbindung bestimmter
-              Dienstleistungen von Drittunternehmen innerhalb von Webseiten.
-            </p>
-            <p className="mb-4">
-              Sie können Ihren Browser so einstellen, dass Sie über das Setzen
-              von Cookies informiert werden und Cookies nur im Einzelfall
-              erlauben, die Annahme von Cookies für bestimmte Fälle oder
-              generell ausschließen sowie das automatische Löschen der Cookies
-              beim Schließen des Browsers aktivieren.
+              Diese Website verwendet <strong>keine Cookies</strong> und{" "}
+              <strong>keine Tracking-Technologien</strong>. Es werden keine
+              Daten in Ihrem Browser gespeichert und keine Analyse-Tools wie
+              Google Analytics eingesetzt.
             </p>
 
             <h3 className="font-bold mb-2">Kontaktformular</h3>

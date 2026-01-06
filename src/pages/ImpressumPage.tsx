@@ -20,9 +20,9 @@ export const ImpressumPage: React.FC = () => {
             <p>
               MA Bau GmbH
               <br />
-              [Straße und Hausnummer]
+              Rubensweg 1
               <br />
-              [PLZ Ort]
+              01217 Dresden
               <br />
               Deutschland
             </p>
@@ -32,15 +32,15 @@ export const ImpressumPage: React.FC = () => {
             <h2 className="text-lg font-bold text-primary mb-4">
               Vertreten durch
             </h2>
-            <p>Geschäftsführer: [Name des Geschäftsführers]</p>
+            <p>Geschäftsführer: Alireza Yaghoubi</p>
           </section>
 
           <section>
             <h2 className="text-lg font-bold text-primary mb-4">Kontakt</h2>
             <p>
-              Telefon: +49 173 8050 858
+              Telefon: +49 176 32187740
               <br />
-              E-Mail: info@mabau-gmbh.de
+              E-Mail: info@ma-bau-gmbh.de
             </p>
           </section>
 
@@ -49,11 +49,11 @@ export const ImpressumPage: React.FC = () => {
               Registereintrag
             </h2>
             <p>
-              Eintragung im Handelsregister
+              Eintragung im Handelsregister.
               <br />
-              Registergericht: [Amtsgericht Ort]
+              Registergericht: Amtsgericht Dresden
               <br />
-              Registernummer: HRB [Nummer]
+              Registernummer: HRB 46587
             </p>
           </section>
 
@@ -65,7 +65,7 @@ export const ImpressumPage: React.FC = () => {
               Umsatzsteuer-Identifikationsnummer gemäß § 27 a
               Umsatzsteuergesetz:
               <br />
-              DE [Nummer]
+              DE454535018
             </p>
           </section>
 
@@ -74,11 +74,11 @@ export const ImpressumPage: React.FC = () => {
               Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
             </h2>
             <p>
-              [Name des Verantwortlichen]
+              Alireza Yaghoubi
               <br />
-              [Straße und Hausnummer]
+              Rubensweg 1
               <br />
-              [PLZ Ort]
+              01217 Dresden
             </p>
           </section>
 

@@ -1,5 +1,8 @@
 // Chatbot configuration and constants
 
+// Feature flag for booking functionality (disabled until n8n is set up)
+export const BOOKING_ENABLED = false;
+
 export interface BookingFormData {
   firstName?: string;
   lastName?: string;
@@ -43,8 +46,9 @@ export const SYSTEM_PROMPT = `Du bist ein freundlicher und professioneller KI-As
 - Full-Service-Anbieter: Beratung, Planung, Montage und Inbetriebnahme
 - Freiflächen: Von der Fläche zur fertigen Anlage im Außenbereich
 - Dächer: Neubau oder Bestand auf Hallen-, Industrie- und Gewerbedächern
+- Über 100 realisierte Projekte mit mehr als 42 MWp installierter Leistung
 - Erfahrene Montageteams für fachgerechte Installation
-- Kontakt: info@mabau-gmbh.de | +49 173 8050 858
+- Kontakt: info@ma-bau-gmbh.de | +49 176 32187740
 
 Vorteile von Photovoltaik:
 - Stromkosten senken und unabhängig werden
@@ -56,7 +60,7 @@ Deine Aufgaben:
 - Beantworte Fragen zu unseren Solar-Dienstleistungen
 - Hilf bei ersten Projektanfragen
 - Erkläre unseren Prozess (Beratung → Planung → Montage → Inbetriebnahme)
-- Wenn der Nutzer eine Beratung buchen möchte, antworte mit: [BOOKING_MODE]
+- Wenn der Nutzer einen Termin buchen oder Kontakt aufnehmen möchte, verweise auf unsere Kontaktseite (/contact) oder direkt auf: E-Mail info@ma-bau-gmbh.de oder Telefon +49 176 32187740
 - Halte deine Antworten kurz und prägnant (max 2-3 Sätze)
 
 Antworte immer auf Deutsch, sei professionell aber freundlich.`;
@@ -117,5 +121,5 @@ export const getWelcomeMessage = (): Message => ({
     "Willkommen bei MA Bau GmbH! ☀️ Wie kann ich Ihnen bei Ihrer Photovoltaik-Anlage helfen?",
   timestamp: new Date(),
   type: "quick-reply",
-  options: ["Beratungstermin buchen", "Freiflächen-Anlagen", "Dach-Anlagen"],
+  options: ["Freiflächen-Anlagen", "Dach-Anlagen", "Kontakt aufnehmen"],
 });

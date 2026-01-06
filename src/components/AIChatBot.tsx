@@ -8,7 +8,7 @@ import {
   GEMINI_API_KEY,
   GEMINI_API_URL,
   SYSTEM_PROMPT,
-  BOOKING_TRIGGER_PHRASES,
+  BOOKING_ENABLED,
   getWelcomeMessage,
 } from "../data/chatbotConfig";
 import {
@@ -18,6 +18,7 @@ import {
   ChatMessage,
   LoadingMessage,
 } from "./chat";
+import { WhatsAppButton } from "./WhatsAppButton";
 
 export const AIChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,6 +54,10 @@ export const AIChatBot: React.FC = () => {
     return newMessage;
   };
 
+  /* 
+   * Booking flow temporarily disabled - will be re-enabled when n8n backend is set up
+   * Uncomment this function and related code when ready to enable booking
+   *
   const startBookingFlow = () => {
     setBookingStep("firstName");
     setFormData({});
@@ -62,6 +67,7 @@ export const AIChatBot: React.FC = () => {
         "Toll! Ich helfe Ihnen gerne bei der Buchung eines Beratungstermins. ☀️\n\nLassen Sie uns mit ein paar kurzen Fragen beginnen.\n\n**Wie ist Ihr Vorname?**",
     });
   };
+  */
 
   const handleBookingStep = (input: string) => {
     switch (bookingStep) {
@@ -163,7 +169,7 @@ export const AIChatBot: React.FC = () => {
         }, 500);
         break;
 
-      case "time":
+      case "time": {
         const updatedFormData = { ...formData, time: input };
         setFormData(updatedFormData);
         setBookingStep("confirm");
@@ -177,6 +183,7 @@ export const AIChatBot: React.FC = () => {
           });
         }, 500);
         break;
+      }
 
       case "confirm":
         if (input === "Termin bestätigen") {
@@ -211,21 +218,10 @@ export const AIChatBot: React.FC = () => {
 
     setInputValue("");
 
-    // Check if we're in booking mode
-    if (bookingStep !== "idle" && bookingStep !== "done") {
-      handleBookingStep(text);
-      return;
-    }
-
-    // Check for booking trigger phrases
-    if (
-      BOOKING_TRIGGER_PHRASES.some((phrase) =>
-        text.toLowerCase().includes(phrase)
-      )
-    ) {
-      addMessage({ role: "user", content: text });
-      setTimeout(() => startBookingFlow(), 500);
-      return;
+    // Booking flow is disabled - redirect to contact info
+    if (!BOOKING_ENABLED && bookingStep !== "idle" && bookingStep !== "done") {
+      // Reset booking step if somehow triggered
+      setBookingStep("idle");
     }
 
     // Regular AI chat
@@ -281,7 +277,7 @@ export const AIChatBot: React.FC = () => {
         data.candidates?.[0]?.content?.parts?.[0]?.text ||
         "Entschuldigung, ich konnte keine Antwort generieren.";
 
-      // Check if AI wants to trigger booking mode
+      // Check if AI wants to trigger booking mode - now redirects to contact
       if (assistantContent.includes("[BOOKING_MODE]")) {
         assistantContent = assistantContent
           .replace("[BOOKING_MODE]", "")
@@ -289,10 +285,8 @@ export const AIChatBot: React.FC = () => {
         addMessage({
           role: "assistant",
           content:
-            assistantContent ||
-            "Natürlich helfe ich Ihnen gerne bei der Terminbuchung!",
+            "Gerne helfe ich Ihnen weiter! Für eine persönliche Beratung kontaktieren Sie uns:\n\n📧 **info@ma-bau-gmbh.de**\n📞 **+49 176 32187740**\n\nOder besuchen Sie unsere [Kontaktseite](/contact).",
         });
-        setTimeout(() => startBookingFlow(), 1000);
       } else {
         addMessage({ role: "assistant", content: assistantContent });
       }
@@ -311,18 +305,37 @@ export const AIChatBot: React.FC = () => {
   };
 
   const handleQuickReply = (option: string) => {
-    if (option === "Beratungstermin buchen" || option === "Ja, Termin buchen") {
+    if (option === "Kontakt aufnehmen" || option === "Ja, Kontakt aufnehmen") {
       addMessage({ role: "user", content: option });
-      setTimeout(() => startBookingFlow(), 500);
+      setTimeout(() => {
+        addMessage({
+          role: "assistant",
+          content:
+            "Gerne! So erreichen Sie uns:\n\n📧 **info@ma-bau-gmbh.de**\n📞 **+49 176 32187740**\n\nOder besuchen Sie unsere [Kontaktseite](/contact) für ein Anfrageformular.",
+        });
+      }, 500);
+    } else if (
+      option === "Beratungstermin buchen" ||
+      option === "Ja, Termin buchen"
+    ) {
+      // Redirect to contact instead of booking flow
+      addMessage({ role: "user", content: option });
+      setTimeout(() => {
+        addMessage({
+          role: "assistant",
+          content:
+            "Für eine persönliche Beratung kontaktieren Sie uns gerne direkt:\n\n📧 **info@ma-bau-gmbh.de**\n📞 **+49 176 32187740**\n\nWir melden uns schnellstmöglich bei Ihnen!",
+        });
+      }, 500);
     } else if (option === "Freiflächen-Anlagen") {
       addMessage({ role: "user", content: option });
       setTimeout(() => {
         addMessage({
           role: "assistant",
           content:
-            "Unsere **Freiflächen-Anlagen** eignen sich perfekt für große Grundstücke! ☀️\n\nWir übernehmen den kompletten Prozess: von der Standortanalyse über die Planung bis zur schlüsselfertigen Installation.\n\nMöchten Sie einen Beratungstermin vereinbaren?",
+            "Unsere **Freiflächen-Anlagen** eignen sich perfekt für große Grundstücke! ☀️\n\nWir übernehmen den kompletten Prozess: von der Standortanalyse über die Planung bis zur schlüsselfertigen Installation.\n\nMöchten Sie mehr erfahren oder Kontakt aufnehmen?",
           type: "quick-reply",
-          options: ["Ja, Termin buchen", "Mehr erfahren"],
+          options: ["Kontakt aufnehmen", "Mehr erfahren"],
         });
       }, 500);
     } else if (option === "Dach-Anlagen") {
@@ -331,9 +344,9 @@ export const AIChatBot: React.FC = () => {
         addMessage({
           role: "assistant",
           content:
-            "Unsere **Dach-Anlagen** sind ideal für Industrie- und Gewerbeflächen! 🏢\n\nOb Neubau oder Bestand – wir installieren leistungsstarke PV-Systeme auf Hallen- und Flachdächern.\n\nInteressiert an einer unverbindlichen Beratung?",
+            "Unsere **Dach-Anlagen** sind ideal für Industrie- und Gewerbeflächen! 🏢\n\nOb Neubau oder Bestand – wir installieren leistungsstarke PV-Systeme auf Hallen- und Flachdächern.\n\nInteressiert an weiteren Informationen?",
           type: "quick-reply",
-          options: ["Ja, Termin buchen", "Mehr erfahren"],
+          options: ["Kontakt aufnehmen", "Mehr erfahren"],
         });
       }, 500);
     } else if (option === "Mehr erfahren") {
@@ -368,11 +381,12 @@ export const AIChatBot: React.FC = () => {
 
   return (
     <>
+      <WhatsAppButton hidden={false} shiftDown={isOpen} />
       <ChatToggleButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
 
       {/* Chat Window */}
       <div
-        className={`fixed bottom-28 right-6 z-50 w-[90vw] max-w-[420px] transition-all duration-500 origin-bottom-right ${
+        className={`fixed bottom-6 right-6 z-50 w-[90vw] max-w-[420px] transition-all duration-500 origin-bottom-right ${
           isOpen
             ? "opacity-100 scale-100 translate-y-0"
             : "opacity-0 scale-95 translate-y-4 pointer-events-none"
@@ -382,7 +396,10 @@ export const AIChatBot: React.FC = () => {
           className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col"
           style={{ height: "min(650px, 75vh)" }}
         >
-          <ChatHeader bookingStep={bookingStep} />
+          <ChatHeader
+            bookingStep={bookingStep}
+            onClose={() => setIsOpen(false)}
+          />
 
           {/* Messages Container */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-gray-50 to-white">
