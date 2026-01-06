@@ -258,8 +258,8 @@ export const AboutPage: React.FC = () => {
                 </h2>
                 <p className="text-gray-400 font-light leading-relaxed max-w-md">
                   Seit unserer Gründung haben wir über 42 MWp Solarleistung
-                  erfolgreich installiert – auf Dächern und Freiflächen in
-                  ganz Deutschland und Europa.
+                  erfolgreich installiert – auf Dächern und Freiflächen in ganz
+                  Deutschland und Europa.
                 </p>
               </div>
 
