@@ -121,6 +121,27 @@ export const DatenschutzPage: React.FC = () => {
                 https://www.cloudflare.com/privacypolicy/
               </a>
             </p>
+
+            <h3 className="font-bold mb-2 mt-6">Webanalyse durch Cloudflare</h3>
+            <p className="mb-4">
+              Auf dieser Website nutzen wir das Webanalyse-Tool „Cloudflare Web
+              Analytics" des Anbieters Cloudflare, Inc. (101 Townsend St., San
+              Francisco, CA 94107, USA).
+            </p>
+            <p className="mb-4">
+              Datenschutz ist uns wichtig: Cloudflare Web Analytics verwendet
+              <strong> keine Cookies</strong> und speichert keine
+              personenbezogenen Daten. Es werden auch keine individuellen
+              Nutzerprofile erstellt („Fingerprinting"). Die Analyse erfolgt
+              ausschließlich anhand aggregierter Daten, die keine Rückschlüsse
+              auf einzelne Personen zulassen.
+            </p>
+            <p className="mb-4">
+              Die Verarbeitung dient dem Zweck, die Nutzung unserer Website
+              statistisch auszuwerten und technisch zu optimieren (z.B.
+              Ladezeiten messen). Dies erfolgt auf Grundlage unseres
+              berechtigten Interesses gemäß Art. 6 Abs. 1 lit. f DSGVO.
+            </p>
           </section>
 
           {/* 3. Allgemeine Hinweise und Pflichtinformationen */}
