@@ -43,7 +43,7 @@ export const SplitBrandReveal: React.FC = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top top",
+          start: isMobile ? "top top+=85" : "top top",
           end: isMobile ? "+=150%" : "+=300%",
           scrub: isMobile ? 0.5 : 1,
           pin: true,
@@ -122,7 +122,7 @@ export const SplitBrandReveal: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen w-full overflow-hidden bg-[#1C1C1C] will-change-transform z-[60]"
+      className="relative h-screen w-full overflow-hidden bg-[#1C1C1C] will-change-transform"
     >
       {/* --- THE HIDDEN CONTENT (REVEALED BEHIND) --- */}
       <div className="reveal-content absolute inset-0 z-0 flex flex-col items-center justify-center overflow-hidden">
