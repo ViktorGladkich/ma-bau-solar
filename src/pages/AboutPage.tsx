@@ -298,9 +298,11 @@ export const AboutPage: React.FC = () => {
 
             <div className="hero-sub grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl border-t border-white/10 pt-8 md:pt-12">
               <p className="text-lg md:text-2xl font-light leading-relaxed text-gray-300">
-                Ihr zuverlässiger Partner für nachhaltige Energielösungen und
-                professionelles Handwerk. Von Solaranlagen bis Renovierung – wir
-                setzen Ihr Projekt qualitativ hochwertig um.
+                Seit 2020 in Dresden verwurzelt, europaweit tätig. Ihr
+                zuverlässiger Partner für nachhaltige Energielösungen und
+                professionelles Handwerk. Von großflächigen Solaranlagen über
+                Industriemontagen bis zu hochwertigen Renovierungen – wir setzen
+                Ihr Projekt mit Präzision, Erfahrung und Leidenschaft um.
               </p>
             </div>
           </div>
@@ -386,9 +388,11 @@ export const AboutPage: React.FC = () => {
                   Kapazität.
                 </h2>
                 <p className="text-gray-400 font-light leading-relaxed max-w-md">
-                  Seit unserer Gründung haben wir über 42 MWp Solarleistung
-                  erfolgreich installiert – auf Dächern und Freiflächen in ganz
-                  Deutschland und Europa.
+                  Seit unserer Gründung in Dresden im Jahr 2020 haben wir über
+                  42 MWp Solarleistung erfolgreich installiert – auf Dächern und
+                  Freiflächen in ganz Deutschland, Österreich und weiteren
+                  europäischen Ländern. Qualität made in Dresden, Vertrauen
+                  europaweit.
                 </p>
               </div>
 

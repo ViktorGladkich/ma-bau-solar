@@ -22,33 +22,33 @@ export interface Award {
 export const milestones: Milestone[] = [
   {
     year: "2020",
-    title: "Gründung",
-    desc: "MA Bau GmbH wird in Berlin gegründet mit Fokus auf Photovoltaik-Montage.",
-    img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2670&auto=format&fit=crop",
+    title: "Gründung in Dresden",
+    desc: "MA Bau GmbH wird in Dresden gegründet mit klarem Fokus auf professionelle Photovoltaik-Montage und qualitativ hochwertige Baudienstleistungen. Von Anfang an setzen wir auf nachhaltige Energielösungen und zuverlässige Handwerksarbeit.",
+    img: "/uberUns/grundung.jpg",
   },
   {
     year: "2021",
     title: "Erste Großprojekte",
-    desc: "Erfolgreiche Realisierung erster Großanlagen auf Industrie- und Gewerbedächern in Berlin.",
-    img: "https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=2574&auto=format&fit=crop",
+    desc: "Erfolgreiche Realisierung erster Großanlagen auf Industrie- und Gewerbedächern in Dresden und Umgebung. Aufbau eines erfahrenen Montageteams und Etablierung als zuverlässiger Partner für Gewerbekunden in Sachsen.",
+    img: "/projects/freiflaeche2.jpg",
   },
   {
     year: "2022",
-    title: "Expansion",
-    desc: "Erweiterung auf Freiflächenanlagen. Partnerschaften mit führenden Modulherstellern etabliert.",
-    img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2664&auto=format&fit=crop",
+    title: "Expansion nach Deutschland und Europa",
+    desc: "Erweiterung des Leistungsspektrums auf Freiflächenanlagen. Strategische Partnerschaften mit führenden Modulherstellern etabliert. Erste überregionale Projekte in Berlin, Brandenburg und Österreich erfolgreich abgeschlossen.",
+    img: "/uberUns/expansion.jpg",
   },
   {
     year: "2024",
-    title: "Wachstum",
-    desc: "Ausbau der Montagekapazitäten und des Teams. Über 100 erfolgreich realisierte Solarprojekte.",
-    img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop",
+    title: "Starkes Wachstum",
+    desc: "Massiver Ausbau der Montagekapazitäten und des Teams. Über 100 erfolgreich realisierte Solarprojekte in Deutschland, Österreich und weiteren europäischen Ländern. Spezialisierung auf komplexe Großanlagen und anspruchsvolle Dachmontagen.",
+    img: "/projects/footerBanner.webp",
   },
   {
     year: "2025",
-    title: "Zukunft",
-    desc: "Weiterentwicklung als Full-Service-Partner für Photovoltaik-Projekte jeder Größenordnung. Über 42 MWp installierte Leistung.",
-    img: "https://images.unsplash.com/photo-1473876637954-4b493d59fd97?q=80&w=2568&auto=format&fit=crop",
+    title: "Zukunft der Energiewende",
+    desc: "Weiterentwicklung als Full-Service-Partner für Photovoltaik-Projekte jeder Größenordnung. Über 42 MWp installierte Leistung. Kontinuierliche Innovation in Montagetechnik und Projektmanagement. Aktive Mitgestaltung der Energiewende in Europa.",
+    img: "/uberUns/zukunftEnergiewende.jpg",
   },
 ];
 

@@ -49,7 +49,7 @@ export const ExpertisePage: React.FC = () => {
             </>
           }
           description="Wir verstehen uns nicht nur als Monteure, sondern als Partner für Ihre Energiezukunft. Unser Prozess ist transparent, strukturiert und auf Qualität ausgerichtet."
-          backgroundImage="/projects/logistikzentrum.jpg"
+          backgroundImage="/hero-leistungen.jpg"
         />
 
         {/* Process Steps */}

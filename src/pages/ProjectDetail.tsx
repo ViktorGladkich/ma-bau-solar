@@ -169,7 +169,7 @@ export const ProjectDetail: React.FC = () => {
               project.gallery.map((img: string, index: number) => (
                 <div
                   key={index}
-                  className={`gallery-img-wrapper relative overflow-hidden bg-gray-200 ${
+                  className={`gallery-img-wrapper relative overflow-hidden bg-gray-200 rounded-2xl md:rounded-3xl ${
                     index % 3 === 0
                       ? "md:col-span-2 aspect-[16/9]"
                       : "aspect-[4/5]"
@@ -197,11 +197,11 @@ export const ProjectDetail: React.FC = () => {
               className="w-full h-full object-cover"
               alt="Nächstes Projekt"
             />
-            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-white">
+            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-white px-6 md:px-12">
               <span className="text-xs uppercase tracking-widest mb-4 opacity-70">
                 Nächstes Projekt
               </span>
-              <h2 className="text-5xl md:text-7xl font-serif italic group-hover:scale-110 transition-transform duration-500">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif italic group-hover:scale-110 transition-transform duration-500 text-center max-w-4xl">
                 {nextProject.title}
               </h2>
               <div className="mt-8 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 duration-300">
