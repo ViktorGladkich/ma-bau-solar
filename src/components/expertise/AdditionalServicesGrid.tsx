@@ -142,7 +142,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   return (
     <div
       ref={cardRef}
-      className="service-card group perspective-1000 opacity-0"
+      className="service-card group perspective-1000 opacity-0 h-full"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
@@ -150,12 +150,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
         transition: "transform 0.1s ease-out",
       }}
     >
-      <div className="relative bg-[#1a1a1a] border border-white/10 rounded-lg p-8 md:p-10 hover:border-accent/50 transition-all duration-500 overflow-hidden group-hover:shadow-2xl group-hover:shadow-accent/10">
+      <div className="relative bg-[#1a1a1a] border border-white/10 rounded-lg p-8 md:p-10 hover:border-accent/50 transition-all duration-500 overflow-hidden group-hover:shadow-2xl group-hover:shadow-accent/10 h-full flex flex-col">
         {/* Background gradient effect */}
         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Content */}
-        <div className="relative z-10">
+        <div className="relative z-10 flex-1 flex flex-col">
           {/* Icon */}
           <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-500">
             {service.icon}
