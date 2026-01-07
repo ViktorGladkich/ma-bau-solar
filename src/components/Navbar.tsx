@@ -192,9 +192,9 @@ export const Navbar: React.FC = () => {
                 Kontakt
               </h3>
               <p className="text-xl font-serif leading-relaxed text-gray-300">
-                Industriestraße 45
+                Rubensweg 1
                 <br />
-                10115 Berlin
+                01217 Dresden
                 <br />
                 Deutschland
               </p>

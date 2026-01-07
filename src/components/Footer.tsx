@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
             © {currentYear} MA Bau GmbH
           </span>
           <span className="text-[9px] md:text-[10px] opacity-50 lowercase">
-            Solaranlagen für Freiflächen & Dächer
+            Photovoltaik, Trockenbau & professionelles Handwerk
           </span>
         </div>
 

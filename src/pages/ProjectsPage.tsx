@@ -108,7 +108,7 @@ export const ProjectsPage: React.FC = () => {
     <>
       <SEO
         title="Projekte"
-        description="Unsere realisierten Photovoltaik-Projekte in Deutschland und Europa. Solaranlagen für Gewerbe, Industrie und Landwirtschaft."
+        description="Unsere realisierten Projekte: Photovoltaik-Anlagen, Trockenbau, Renovierungen und mehr. MA Bau GmbH – professionelles Handwerk aus Dresden."
       />
       <div
         ref={containerRef}
@@ -249,7 +249,7 @@ export const ProjectsPage: React.FC = () => {
               ))}
             </div>
             {/* --- CALL TO ACTION SECTION --- */}
-            <section className="relative bg-[#111] rounded-lg text-white py-16 md:py-20 mb-16 mx-4 md:mx-12 flex flex-col items-center justify-center px-4 md:px-12">
+            <section className="relative bg-primary rounded-lg text-white py-16 md:py-20 mt-16 md:mt-24 mb-16 mx-4 md:mx-12 flex flex-col items-center justify-center px-4 md:px-12">
               <div className="max-w-3xl text-center space-y-4 md:space-y-6">
                 <h2 className="text-[10vw] sm:text-4xl md:text-5xl font-serif font-bold tracking-tight">
                   Bereit für Ihr nächstes Projekt?
@@ -260,7 +260,7 @@ export const ProjectsPage: React.FC = () => {
                 </p>
                 <Link
                   to="/contact"
-                  className="inline-block px-10 md:px-12 py-4 md:py-5 border border-white/20 text-white text-xs md:text-sm uppercase tracking-widest hover:bg-white hover:text-[#111] transition-all duration-300"
+                  className="inline-block px-10 md:px-12 py-4 md:py-5 border border-white/20 text-white text-xs md:text-sm uppercase tracking-widest hover:bg-white hover:text-accent transition-all duration-300"
                 >
                   Kontakt aufnehmen
                 </Link>

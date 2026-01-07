@@ -103,7 +103,7 @@ export const HomePage: React.FC = () => {
     <>
       <SEO
         title="Startseite"
-        description="MA Bau GmbH – Ihr Partner für Photovoltaik. Solaranlagen für Freiflächen und Dächer, zuverlässig und fachgerecht umgesetzt."
+        description="MA Bau GmbH – Ihr Experte für Photovoltaik und Bau in Dresden. Solaranlagen, Trockenbau, Renovierung und mehr – alles aus einer Hand."
       />
       <div ref={containerRef} className="bg-secondary">
         <Hero />
@@ -116,7 +116,8 @@ export const HomePage: React.FC = () => {
                 Full Service Solaranlagen
               </span>
               <h2 className="animate-text text-4xl md:text-5xl font-serif leading-[1.1] text-primary">
-                Photovoltaik,
+                Photovoltaik
+                <br />& Bau
                 <br />
                 <span className="italic text-accent">professionell</span>{" "}
                 umgesetzt.
@@ -125,9 +126,9 @@ export const HomePage: React.FC = () => {
             <div className="lg:col-span-1 hidden lg:block"></div>
             <div className="lg:col-span-6 pt-2">
               <p className="animate-text text-xl text-primary/80 font-light leading-relaxed mb-8">
-                Wir sind MA Bau. Ihr Partner für Photovoltaik-Projekte, die
-                nicht nur geplant, sondern zuverlässig und fachgerecht umgesetzt
-                werden.
+                Wir sind MA Bau. Ihr Partner für nachhaltige Energielösungen und
+                professionelles Handwerk – von der Solaranlage bis zur
+                Renovierung.
               </p>
               <p className="animate-text text-gray-600 font-light leading-relaxed mb-10">
                 Unser Ansatz verbindet fundierte Planung mit handwerklicher

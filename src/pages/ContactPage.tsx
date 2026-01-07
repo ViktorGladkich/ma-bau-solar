@@ -181,7 +181,7 @@ export const ContactPage: React.FC = () => {
     <>
       <SEO
         title="Kontakt"
-        description="Kontaktieren Sie MA Bau GmbH für Ihre Photovoltaik-Projekte. Beratung, Planung und Installation von Solaranlagen in ganz Deutschland und Europa."
+        description="Kontaktieren Sie MA Bau GmbH für Photovoltaik, Trockenbau, Renovierung und mehr. Ihr Experte für Bau und Solaranlagen in Dresden und Umgebung."
       />
       <div
         ref={containerRef}
@@ -325,7 +325,7 @@ export const ContactPage: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-10">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="form-item group relative">
-                      <label className="block text-xs uppercase tracking-widest text-gray-400 mb-2">
+                      <label className="block text-xs uppercase tracking-widest text-primary mb-2">
                         Vorname *
                       </label>
                       <input
@@ -348,7 +348,7 @@ export const ContactPage: React.FC = () => {
                     </div>
 
                     <div className="form-item group relative">
-                      <label className="block text-xs uppercase tracking-widest text-gray-400 mb-2">
+                      <label className="block text-xs uppercase tracking-widest text-primary mb-2">
                         Nachname *
                       </label>
                       <input
@@ -372,7 +372,7 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="form-item group relative">
-                    <label className="block text-xs uppercase tracking-widest text-gray-400 mb-2">
+                    <label className="block text-xs uppercase tracking-widest text-primary mb-2">
                       E-Mail Adresse *
                     </label>
                     <input
@@ -395,7 +395,7 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="form-item group relative">
-                    <label className="block text-xs uppercase tracking-widest text-gray-400 mb-2">
+                    <label className="block text-xs uppercase tracking-widest text-primary mb-2">
                       Unternehmen
                     </label>
                     <input
@@ -409,7 +409,7 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="form-item group relative">
-                    <label className="block text-xs uppercase tracking-widest text-gray-400 mb-2">
+                    <label className="block text-xs uppercase tracking-widest text-primary mb-2">
                       Ihre Nachricht *
                     </label>
                     <textarea
