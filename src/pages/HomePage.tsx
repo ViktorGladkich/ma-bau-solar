@@ -23,6 +23,12 @@ export const HomePage: React.FC = () => {
       // 1. Process Section - Sticky Image Logic
       const steps = gsap.utils.toArray<HTMLElement>(".process-step");
       steps.forEach((step, i) => {
+        // Check if elements exist before creating ScrollTrigger
+        const processImg = document.querySelector(`.process-img-${i}`);
+        const stepIndicator = document.querySelector(`.step-indicator-${i}`);
+
+        if (!processImg || !stepIndicator) return;
+
         ScrollTrigger.create({
           trigger: step,
           start: "top center",
