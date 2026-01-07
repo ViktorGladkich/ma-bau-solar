@@ -79,3 +79,49 @@ export const sustainabilityPoints = [
   "Modulare Systembauweise",
   "Recycling-Partnerschaften",
 ];
+
+// Additional Services beyond Solar
+export interface AdditionalService {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export const additionalServices: AdditionalService[] = [
+  {
+    id: "1",
+    title: "Stahlunterbauten",
+    description:
+      "Robuste Stahlkonstruktionen als tragfähige Basis für Solaranlagen. Präzise gefertigte Unterbauten für Freiflächen- und Dachinstallationen.",
+    icon: "🏗️",
+  },
+  {
+    id: "2",
+    title: "Trockenbau",
+    description:
+      "Professioneller Innenausbau mit modernsten Trockenbausystemen. Von Wandverkleidungen bis zu kompletten Raumgestaltungen – schnell und sauber.",
+    icon: "🧱",
+  },
+  {
+    id: "3",
+    title: "Abrissarbeiten",
+    description:
+      "Fachgerechter Rückbau und Abbruch von Gebäuden und Bauteilen. Sicher, effizient und mit professioneller Entsorgung.",
+    icon: "🔨",
+  },
+  {
+    id: "4",
+    title: "Renovierung",
+    description:
+      "Umfassende Sanierung und Modernisierung Ihrer Objekte. Von Einzelmaßnahmen bis zur Komplettrenovierung – alles aus einer Hand.",
+    icon: "🏠",
+  },
+  {
+    id: "5",
+    title: "Innenanstriche",
+    description:
+      "Hochwertige Malerarbeiten für Wohn- und Gewerberäume. Präzise Ausführung mit erstklassigen Materialien für langanhaltende Ergebnisse.",
+    icon: "🎨",
+  },
+];

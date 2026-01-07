@@ -6,3 +6,4 @@ export { ProcessStepCard } from "./ProcessStepCard";
 export { CapabilitiesGrid } from "./CapabilitiesGrid";
 export { SustainabilitySection } from "./SustainabilitySection";
 export { CTASection } from "./CTASection";
+export { AdditionalServicesGrid } from "./AdditionalServicesGrid";

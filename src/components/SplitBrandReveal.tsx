@@ -5,20 +5,20 @@ gsap.registerPlugin(ScrollTrigger);
 import bgImage from "../assets/bgImage.webp";
 const column1 = [
   "/projects/78kWp_Berlin.jpg",
-  "/projects/499kWp_schwaebisch.jpg",
-  "/projects/499kWp_schwaebisch2.jpg",
+  "/projects/78kWp_Berlin3.jpg",
+  "/projects/norderstedt2.jpg",
 ];
 
 const column2 = [
-  "/projects/einkaufszentrum.jpg",
+  "/projects/norderstedt4.jpg",
   "/processSteps/Inbetriebnahme_Service.jpg",
-  "/projects/freiflaeche4.jpg",
+  "/projects/reinfeld3.jpg",
 ];
 
 const column3 = [
   "/materials/solarmodule.jpg",
-  "/projects/produktionshalle4.jpg",
-  "/projects/lagerhalle4.jpg",
+  "/projects/sattlend4.jpg",
+  "/projects/reinfeld.jpg",
 ];
 
 export const SplitBrandReveal: React.FC = () => {

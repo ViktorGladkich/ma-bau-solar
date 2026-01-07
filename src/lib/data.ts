@@ -3,17 +3,17 @@ import type { ProjectData } from "../types";
 export const projectsData: ProjectData[] = [
   {
     id: 1,
-    slug: "gewerbe-sattlend-oesterreich",
-    title: "Gewerbeanlage Sattlend",
-    category: "Gewerbe",
+    slug: "industrie-sattlend-oesterreich",
+    title: "Industrieanlage Sattlend",
+    category: "Industrie",
     year: "2024",
     location: "Sattlend, Österreich",
     kWp: "819 kWp",
     client: "",
     imageUrl: "/projects/sattlend.jpg",
-    description: "819 kWp Gewerbedachanlage in Sattlend, 4642, Österreich.",
+    description: "819 kWp Industriedachanlage in Sattlend, 4642, Österreich.",
     challenge:
-      "Die Herausforderung bestand darin, eine großflächige Anlage auf einem Gewerbedach in Österreich zu realisieren und dabei die lokalen Vorschriften einzuhalten.",
+      "Die Herausforderung bestand darin, eine großflächige Anlage auf einem Industriedach in Österreich zu realisieren und dabei die lokalen Vorschriften sowie die spezifischen Anforderungen der Industrieproduktion einzuhalten.",
     solution:
       "Wir entwickelten ein maßgeschneidertes Montagesystem, das optimal an die Dachstruktur angepasst wurde. Die Installation erfolgte termingerecht und professionell.",
     gallery: [
@@ -24,23 +24,23 @@ export const projectsData: ProjectData[] = [
   },
   {
     id: 2,
-    slug: "produktionshalle-spandau",
-    title: "Produktionshalle Spandau",
+    slug: "industrie-reinfeld",
+    title: "Industrieanlage Reinfeld",
     category: "Industrie",
     year: "2024",
-    location: "Berlin-Spandau",
-    kWp: "620 kWp",
+    location: "Reinfeld, Deutschland",
+    kWp: "608,40 kWp",
     client: "",
-    imageUrl: "/projects/produktionshalle.jpg",
-    description: "620 kWp auf Trapezblech mit optimierter Ausrichtung.",
+    imageUrl: "/projects/reinfeld.jpg",
+    description: "608,40 kWp Industriedachanlage in Reinfeld, Deutschland.",
     challenge:
-      "Montage auf einem älteren Industriedach mit begrenzter Traglast und enger Zeitvorgabe.",
+      "Installation einer großflächigen PV-Anlage auf einem Industriedach in Reinfeld mit optimaler Ausrichtung für maximalen Energieertrag.",
     solution:
-      "Einsatz von leichten Modulen und speziellen Klemmsystemen für Trapezblech. Das Projekt wurde innerhalb von 3 Wochen fertiggestellt.",
+      "Professionelle Montage mit hochwertigen Komponenten und maßgeschneidertem Montagesystem. Das Projekt wurde termingerecht und nach höchsten Qualitätsstandards fertiggestellt.",
     gallery: [
-      "/projects/produktionshalle2.jpg",
-      "/projects/produktionshalle3.jpg",
-      "/projects/produktionshalle4.jpg",
+      "/projects/reinfeld2.jpg",
+      "/projects/reinfeld3.jpg",
+      "/projects/reinfeld4.jpg",
     ],
   },
   {

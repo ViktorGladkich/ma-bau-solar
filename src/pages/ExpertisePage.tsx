@@ -6,11 +6,13 @@ import {
   CapabilitiesGrid,
   SustainabilitySection,
   CTASection,
+  AdditionalServicesGrid,
 } from "../components/expertise";
 import {
   processes,
   capabilities,
   sustainabilityPoints,
+  additionalServices,
 } from "../data/expertiseData";
 
 /**
@@ -24,7 +26,8 @@ import {
  * 2. Process Steps - Sticky scroll sections with parallax
  * 3. Capabilities Grid - Technical competencies
  * 4. Sustainability Section - Environmental commitment
- * 5. CTA Section - Call to action
+ * 5. Additional Services - Construction services beyond solar (3D cards)
+ * 6. CTA Section - Call to action
  */
 export const ExpertisePage: React.FC = () => {
   useEffect(() => {
@@ -68,6 +71,9 @@ export const ExpertisePage: React.FC = () => {
 
         {/* Sustainability Section */}
         <SustainabilitySection points={sustainabilityPoints} />
+
+        {/* Additional Services */}
+        <AdditionalServicesGrid services={additionalServices} />
 
         {/* Call to Action */}
         <CTASection
