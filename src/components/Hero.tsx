@@ -124,7 +124,7 @@ export const Hero: React.FC = () => {
     // CHANGED: h-[100svh] -> h[100dvh] to use dynamic viewport height
     <header
       ref={containerRef}
-      className="relative w-full h-[100vh] md:h-screen overflow-hidden bg-white will-change-transform transform-gpu"
+      className="relative w-full h-[100vh] md:h-screen overflow-hidden bg-white will-change-transform transform-gpu contain-layout"
       role="banner"
       aria-label="Hero Bereich"
     >
@@ -200,7 +200,10 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Right Side: Video Wrapper */}
-        <div className="hero-image-wrapper absolute top-0 right-0 w-[55%] h-full overflow-hidden z-0 bg-black will-change-transform backface-hidden">
+        <div
+          className="hero-image-wrapper absolute top-0 right-0 w-[55%] min-h-full h-full overflow-hidden z-0 bg-black will-change-transform backface-hidden"
+          style={{ transformStyle: "preserve-3d" }}
+        >
           <div className="hero-overlay absolute inset-0 bg-black/0 z-10 pointer-events-none transition-opacity"></div>
           <video
             src={heroVideo}
