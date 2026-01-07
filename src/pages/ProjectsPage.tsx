@@ -145,8 +145,9 @@ export const ProjectsPage: React.FC = () => {
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 md:gap-12 border-t border-white/20 pt-6 md:pt-8">
               {/* Description */}
               <p className="header-content-reveal max-w-md text-gray-300 font-light text-sm md:text-lg leading-relaxed">
-                Ein Archiv unserer prägendsten Arbeiten. Kuratierte Räume
-                zwischen temporärer Architektur und dauerhaftem Eindruck.
+                Unsere realisierten Photovoltaik-Projekte – von Großanlagen bis
+                zu maßgeschneiderten Lösungen. Jedes Projekt ein Schritt in
+                Richtung nachhaltiger Energiezukunft.
               </p>
 
               <nav className="header-content-reveal w-full lg:w-auto overflow-x-auto overflow-y-hidden pb-0 lg:pb-0 scrollbar-hide touch-pan-x">
