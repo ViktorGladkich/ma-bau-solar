@@ -179,103 +179,105 @@ export const ProjectsPage: React.FC = () => {
         </header>
 
         {/* --- PROJECT GRID --- */}
-        {/* Reduced mt on mobile from 24 to 12 */}
-        <div className="container mx-auto px-4 md:px-12 mt-8 md:mt-24">
-          {/* Grid Layout: 2 Columns with Offset */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-12 md:gap-y-32">
-            {visibleProjects.map((project, index) => (
-              <div
-                key={project.id}
-                className={`project-card w-full ${
-                  index % 2 === 1 ? "md:mt-32" : ""
-                }`}
-              >
-                <Link to={`/projects/${project.id}`} className="block group">
-                  {/* Image Wrapper */}
-                  <div className="relative aspect-[3/4] md:aspect-[3/4] overflow-hidden bg-[#1a1a1a] mb-4 md:mb-8">
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 z-10"></div>
+        {/* Light Background Section Starting from Cards */}
+        <div className="bg-[#EAE7DF] w-full">
+          <div className="container mx-auto px-4 md:px-12 py-16 md:py-24">
+            {/* Grid Layout: 2 Columns with Offset */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-12 md:gap-y-32">
+              {visibleProjects.map((project, index) => (
+                <div
+                  key={project.id}
+                  className={`project-card w-full ${
+                    index % 2 === 1 ? "md:mt-32" : ""
+                  }`}
+                >
+                  <Link to={`/projects/${project.id}`} className="block group">
+                    {/* Image Wrapper */}
+                    <div className="relative aspect-[3/4] md:aspect-[3/4] overflow-hidden bg-white mb-4 md:mb-8 rounded-lg md:rounded-xl shadow-md">
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 z-10"></div>
 
-                    {/* Floating Button (Appears on Hover) - Hidden on Touch */}
-                    <div className="hidden md:flex absolute inset-0 z-20 items-center justify-center pointer-events-none">
-                      <div className="w-24 h-24 bg-[#EAE7DF] rounded-full flex items-center justify-center scale-0 group-hover:scale-100 transition-transform duration-500 ease-out text-[#111]">
-                        <span className="text-xs font-bold uppercase tracking-widest">
-                          View
+                      {/* Floating Button (Appears on Hover) - Hidden on Touch */}
+                      <div className="hidden md:flex absolute inset-0 z-20 items-center justify-center pointer-events-none">
+                        <div className="w-24 h-24 bg-[#111] rounded-full flex items-center justify-center scale-0 group-hover:scale-100 transition-transform duration-500 ease-out text-white">
+                          <span className="text-xs font-bold uppercase tracking-widest">
+                            Ansehen
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Image with Parallax Class */}
+                      <img
+                        src={project.imageUrl}
+                        alt={project.title}
+                        className="project-img w-full h-[115%] object-cover origin-top transition-filter duration-700"
+                      />
+
+                      {/* Top Right Tag */}
+                      <div className="absolute top-0 right-0 p-4 md:p-6 z-20">
+                        <span className="bg-white text-[#111] text-[10px] font-mono px-3 py-1 uppercase border border-[#111]/10 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0 transform shadow-sm">
+                          {project.year}
                         </span>
                       </div>
                     </div>
 
-                    {/* Image with Parallax Class */}
-                    <img
-                      src={project.imageUrl}
-                      alt={project.title}
-                      className="project-img w-full h-[115%] object-cover origin-top transition-filter duration-700"
-                    />
-
-                    {/* Top Right Tag */}
-                    <div className="absolute top-0 right-0 p-4 md:p-6 z-20">
-                      <span className="bg-[#111] text-[#EAE7DF] text-[10px] font-mono px-3 py-1 uppercase border border-white/10 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0 transform">
-                        {project.year}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Text Content */}
-                  <div className="flex justify-between items-start border-t border-white/10 pt-4 md:pt-6 group-hover:border-accent/50 transition-colors duration-500">
-                    <div className="max-w-sm">
-                      <div className="flex items-center gap-2 md:gap-3 mb-2">
-                        <span className="text-[9px] md:text-[10px] font-bold text-accent uppercase tracking-widest">
-                          0{index + 1}
-                        </span>
-                        <span className="text-[9px] md:text-xs text-gray-500 uppercase tracking-widest">
-                          {project.category}
-                        </span>
+                    {/* Text Content */}
+                    <div className="flex justify-between items-start border-t border-[#111]/10 pt-4 md:pt-6 group-hover:border-accent/50 transition-colors duration-500">
+                      <div className="max-w-sm">
+                        <div className="flex items-center gap-2 md:gap-3 mb-2">
+                          <span className="text-[9px] md:text-[10px] font-bold text-accent uppercase tracking-widest">
+                            0{index + 1}
+                          </span>
+                          <span className="text-[9px] md:text-xs text-gray-500 uppercase tracking-widest">
+                            {project.category}
+                          </span>
+                        </div>
+                        <h2 className="text-xl sm:text-2xl md:text-4xl font-serif text-[#111] group-hover:text-accent transition-colors leading-tight mb-2">
+                          {project.title}
+                        </h2>
+                        <p className="text-sm text-gray-700 line-clamp-2 font-light group-hover:text-gray-800 transition-colors">
+                          {project.description}
+                        </p>
                       </div>
-                      <h2 className="text-xl sm:text-2xl md:text-4xl font-serif text-[#EAE7DF] group-hover:text-white transition-colors leading-tight mb-2">
-                        {project.title}
-                      </h2>
-                      <p className="text-sm text-gray-500 line-clamp-2 font-light group-hover:text-gray-400 transition-colors">
-                        {project.description}
-                      </p>
-                    </div>
 
-                    <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-500 group-hover:border-accent group-hover:text-accent group-hover:rotate-45 transition-all duration-300">
-                      <ArrowUpRight size={18} />
+                      <div className="w-10 h-10 rounded-full border border-[#111]/10 flex items-center justify-center text-gray-700 group-hover:border-accent group-hover:text-accent group-hover:rotate-45 transition-all duration-300">
+                        <ArrowUpRight size={18} />
+                      </div>
                     </div>
-                  </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+            {/* --- CALL TO ACTION SECTION --- */}
+            <section className="relative bg-[#111] rounded-lg text-white py-16 md:py-20 mb-16 mx-4 md:mx-12 flex flex-col items-center justify-center px-4 md:px-12">
+              <div className="max-w-3xl text-center space-y-4 md:space-y-6">
+                <h2 className="text-[10vw] sm:text-4xl md:text-5xl font-serif font-bold tracking-tight">
+                  Bereit für Ihr nächstes Projekt?
+                </h2>
+                <p className="text-base md:text-xl text-gray-300 font-light">
+                  Lassen Sie uns gemeinsam Ihre Vision zum Leben erwecken.
+                  Kontaktieren Sie uns für eine Beratung oder ein Angebot.
+                </p>
+                <Link
+                  to="/contact"
+                  className="inline-block px-10 md:px-12 py-4 md:py-5 border border-white/20 text-white text-xs md:text-sm uppercase tracking-widest hover:bg-white hover:text-[#111] transition-all duration-300"
+                >
+                  Kontakt aufnehmen
                 </Link>
               </div>
-            ))}
-          </div>
-          {/* --- CALL TO ACTION SECTION --- */}
-          <section className="relative bg-[#1a1a1a] rounded-lg text-white py-16 md:py-20 mt-12 md:mt-20 flex flex-col items-center justify-center px-4 md:px-12">
-            <div className="max-w-3xl text-center space-y-4 md:space-y-6">
-              <h2 className="text-[10vw] sm:text-4xl md:text-5xl font-serif font-bold tracking-tight">
-                Bereit für Ihr nächstes Projekt?
-              </h2>
-              <p className="text-base md:text-xl text-gray-300 font-light">
-                Lassen Sie uns gemeinsam Ihre Vision zum Leben erwecken.
-                Kontaktieren Sie uns für eine Beratung oder ein Angebot.
-              </p>
-              <Link
-                to="/contact"
-                className="inline-block px-10 md:px-12 py-4 md:py-5 border border-white/20 text-white text-xs md:text-sm uppercase tracking-widest hover:bg-white hover:text-[#111] transition-all duration-300"
-              >
-                Kontakt aufnehmen
-              </Link>
-            </div>
 
-            {/* Optional subtle background pattern or shapes */}
-            <div className="absolute inset-0 overflow-hidden -z-10">
-              <div className="absolute w-72 h-72 bg-accent/10 rounded-full top-[-20%] left-[-10%] animate-pulse"></div>
-              <div className="absolute w-96 h-96 bg-white/5 rounded-full bottom-[-30%] right-[-15%] animate-pulse"></div>
-            </div>
-          </section>
-          {visibleProjects.length === 0 && (
-            <div className="py-32 text-center text-gray-600 font-serif text-xl">
-              Keine Projekte in dieser Kategorie gefunden.
-            </div>
-          )}
+              {/* Optional subtle background pattern or shapes */}
+              <div className="absolute inset-0 overflow-hidden -z-10">
+                <div className="absolute w-72 h-72 bg-accent/10 rounded-full top-[-20%] left-[-10%] animate-pulse"></div>
+                <div className="absolute w-96 h-96 bg-white/5 rounded-full bottom-[-30%] right-[-15%] animate-pulse"></div>
+              </div>
+            </section>
+            {visibleProjects.length === 0 && (
+              <div className="py-32 text-center text-gray-500 font-serif text-xl">
+                Keine Projekte in dieser Kategorie gefunden.
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </>
