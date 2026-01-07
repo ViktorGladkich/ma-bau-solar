@@ -89,6 +89,33 @@ export const HomePage: React.FC = () => {
         duration: 30,
         repeat: -1,
       });
+
+      // 3. Mobile Process Images - Smooth fade-in animation
+      const mobileProcessImages = gsap.utils.toArray<HTMLElement>(
+        ".mobile-process-image"
+      );
+      mobileProcessImages.forEach((img) => {
+        gsap.fromTo(
+          img,
+          {
+            y: 60,
+            opacity: 0,
+            scale: 0.95,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: img,
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      });
     }, containerRef);
 
     return () => ctx.revert();
@@ -253,7 +280,7 @@ export const HomePage: React.FC = () => {
                   className="process-step min-h-[50vh] lg:min-h-[100svh] flex flex-col justify-center px-6 md:px-24 py-16 md:py-24 border-b border-primary/5 lg:border-none"
                 >
                   {/* Mobile Image */}
-                  <div className="lg:hidden w-full aspect-video mb-8 overflow-hidden rounded-sm relative">
+                  <div className="mobile-process-image lg:hidden w-full aspect-video mb-8 overflow-hidden rounded-sm relative">
                     <img
                       src={step.img}
                       alt={step.title}
