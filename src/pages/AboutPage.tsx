@@ -128,6 +128,134 @@ export const AboutPage: React.FC = () => {
           }
         );
       });
+
+      // 6. Section fade-in animations
+      gsap.utils.toArray<HTMLElement>(".section-fade").forEach((section) => {
+        gsap.fromTo(
+          section,
+          { y: 80, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 85%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
+
+      // 7. Timeline items stagger animation
+      gsap.utils
+        .toArray<HTMLElement>(".timeline-item")
+        .forEach((item, index) => {
+          gsap.fromTo(
+            item,
+            {
+              y: 100,
+              opacity: 0,
+              scale: 0.95,
+            },
+            {
+              y: 0,
+              opacity: 1,
+              scale: 1,
+              duration: 1,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: item,
+                start: "top 85%",
+                toggleActions: "play none none reverse",
+              },
+              delay: index * 0.1,
+            }
+          );
+        });
+
+      // 8. Awards list animation
+      gsap.utils.toArray<HTMLElement>(".award-item").forEach((award, index) => {
+        gsap.fromTo(
+          award,
+          {
+            x: -50,
+            opacity: 0,
+          },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: award,
+              start: "top 90%",
+            },
+            delay: index * 0.1,
+          }
+        );
+      });
+
+      // 9. Stats section stagger
+      gsap.fromTo(
+        ".stat-item",
+        {
+          y: 60,
+          opacity: 0,
+          scale: 0.9,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "back.out(1.4)",
+          scrollTrigger: {
+            trigger: ".stats-grid",
+            start: "top 80%",
+          },
+        }
+      );
+
+      // 10. CTA section reveal
+      gsap.fromTo(
+        ".cta-content",
+        {
+          y: 80,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".cta-section",
+            start: "top 80%",
+          },
+        }
+      );
+
+      // 11. Awards header animation
+      gsap.fromTo(
+        ".awards-header",
+        {
+          y: 60,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".awards-section",
+            start: "top 80%",
+          },
+        }
+      );
     }, containerRef);
 
     return () => ctx.revert();
@@ -209,7 +337,7 @@ export const AboutPage: React.FC = () => {
                 <div
                   id={`milestone-${index}`}
                   key={index}
-                  className="flex flex-col gap-6 md:gap-8 group"
+                  className="timeline-item flex flex-col gap-6 md:gap-8 group"
                 >
                   {/* Mobile Date Header */}
                   <div className="md:hidden flex items-end gap-4 border-b border-white/10 pb-4">
@@ -244,10 +372,10 @@ export const AboutPage: React.FC = () => {
         </section>
 
         {/* --- NEW SECTION: AWARDS & RECOGNITION --- */}
-        <section className="py-24 bg-[#1a1a1a] border-y border-white/5">
+        <section className="awards-section py-24 bg-[#1a1a1a] border-y border-white/5">
           <div className="container mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              <div>
+              <div className="awards-header">
                 <span className="block text-xs font-bold uppercase tracking-widest text-accent mb-6">
                   Unsere Leistung
                 </span>
@@ -267,7 +395,7 @@ export const AboutPage: React.FC = () => {
                 {awards.map((award, i) => (
                   <div
                     key={i}
-                    className="flex items-center justify-between py-6 border-b border-white/10 group hover:bg-white/5 transition-colors px-4 -mx-4 rounded-sm"
+                    className="award-item flex items-center justify-between py-6 border-b border-white/10 group hover:bg-white/5 transition-colors px-4 -mx-4 rounded-sm"
                   >
                     <div className="flex items-center gap-6">
                       <div className="w-4 h-4 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
@@ -365,8 +493,8 @@ export const AboutPage: React.FC = () => {
         {/* --- 5. STATS --- */}
         <section className="py-24 md:py-32 bg-[#111] border-t border-white/5">
           <div className="container mx-auto px-6 md:px-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8 text-center">
-              <div className="flex flex-col items-center">
+            <div className="stats-grid grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8 text-center">
+              <div className="stat-item flex flex-col items-center">
                 <span className="text-5xl md:text-7xl font-serif text-white mb-2 block">
                   <span className="stat-number" data-value="5">
                     0
@@ -376,7 +504,7 @@ export const AboutPage: React.FC = () => {
                   Jahre Erfahrung
                 </span>
               </div>
-              <div className="flex flex-col items-center">
+              <div className="stat-item flex flex-col items-center">
                 <span className="text-5xl md:text-7xl font-serif text-white mb-2 block">
                   <span className="stat-number" data-value="42">
                     0
@@ -387,7 +515,7 @@ export const AboutPage: React.FC = () => {
                   MWp installiert
                 </span>
               </div>
-              <div className="flex flex-col items-center">
+              <div className="stat-item flex flex-col items-center">
                 <span className="text-5xl md:text-7xl font-serif text-white mb-2 block">
                   <span className="stat-number" data-value="100">
                     0
@@ -398,7 +526,7 @@ export const AboutPage: React.FC = () => {
                   Projekte
                 </span>
               </div>
-              <div className="flex flex-col items-center">
+              <div className="stat-item flex flex-col items-center">
                 <span className="text-5xl md:text-7xl font-serif text-white mb-2 block">
                   <span className="stat-number" data-value="100">
                     0
@@ -414,8 +542,8 @@ export const AboutPage: React.FC = () => {
         </section>
 
         {/* --- 6. CTA --- */}
-        <section className="py-24 md:py-32 bg-[#1a1a1a] text-center relative overflow-hidden">
-          <div className="container mx-auto px-6 relative z-10">
+        <section className="cta-section py-24 md:py-32 bg-[#1a1a1a] text-center relative overflow-hidden">
+          <div className="cta-content container mx-auto px-6 relative z-10">
             <span className="block text-xs font-bold uppercase tracking-widest text-accent mb-6 md:mb-8">
               Let's Talk
             </span>

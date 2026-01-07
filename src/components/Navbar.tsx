@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
 import gsap from "gsap";
 import { Link, useLocation } from "react-router-dom";
 
@@ -110,18 +109,73 @@ export const Navbar: React.FC = () => {
 
           <div className="flex items-center gap-8">
             <button
-              className={`z-50 flex items-center gap-3 focus:outline-none group cursor-hover transition-colors duration-300 ${
+              className={`z-50 flex items-center gap-3 outline-none focus:outline-none focus-visible:outline-none focus:ring-0 focus-visible:ring-0 group cursor-hover transition-all duration-500 ${
                 scrolled ? "text-primary" : "text-secondary"
               }`}
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
               aria-expanded={isOpen}
             >
-              <span className="hidden md:block text-xs uppercase tracking-widest transition-colors">
+              {/* Text label with smooth transition */}
+              <span className="hidden md:block text-xs uppercase tracking-widest transition-all duration-500 group-hover:tracking-[0.2em] group-hover:opacity-80">
                 {isOpen ? "Schließen" : "Menü"}
               </span>
-              <div className="relative w-8 h-8 flex items-center justify-center transition-colors">
-                {isOpen ? <X size={24} /> : <Menu size={24} />}
+
+              {/* Premium Animated Hamburger Icon */}
+              <div className="relative w-10 h-10 flex flex-col items-center justify-center group-hover:scale-110 transition-transform duration-500 ease-out">
+                {/* Hover glow effect - only on burger, not on X */}
+                <div
+                  className={`absolute inset-0 rounded-full transition-all duration-500 ${
+                    isOpen
+                      ? "bg-transparent scale-0"
+                      : "bg-transparent scale-0 group-hover:scale-100 group-hover:bg-current/5"
+                  }`}
+                />
+
+                {/* Top line - with stagger delay */}
+                <span
+                  className={`absolute h-[2px] rounded-full transition-all ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] ${
+                    isOpen
+                      ? "bg-accent"
+                      : scrolled
+                      ? "bg-primary"
+                      : "bg-secondary"
+                  } ${
+                    isOpen
+                      ? "w-6 rotate-45 translate-y-0 duration-500 delay-100"
+                      : "w-6 rotate-0 -translate-y-[7px] duration-400 delay-0 group-hover:w-7"
+                  }`}
+                />
+
+                {/* Middle line - fades and scales */}
+                <span
+                  className={`absolute h-[2px] rounded-full transition-all ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] ${
+                    isOpen
+                      ? "bg-accent"
+                      : scrolled
+                      ? "bg-primary"
+                      : "bg-secondary"
+                  } ${
+                    isOpen
+                      ? "w-0 opacity-0 duration-300 delay-0"
+                      : "w-4 opacity-100 duration-400 delay-75 group-hover:w-5"
+                  }`}
+                />
+
+                {/* Bottom line - with stagger delay */}
+                <span
+                  className={`absolute h-[2px] rounded-full transition-all ease-[cubic-bezier(0.68,-0.6,0.32,1.6)] ${
+                    isOpen
+                      ? "bg-accent"
+                      : scrolled
+                      ? "bg-primary"
+                      : "bg-secondary"
+                  } ${
+                    isOpen
+                      ? "w-6 -rotate-45 translate-y-0 duration-500 delay-150"
+                      : "w-6 rotate-0 translate-y-[7px] duration-400 delay-100 group-hover:w-7"
+                  }`}
+                />
               </div>
             </button>
           </div>
@@ -134,7 +188,7 @@ export const Navbar: React.FC = () => {
         <div className="container mx-auto px-4 md:px-12 grid grid-cols-1 lg:grid-cols-2 h-full py-24 md:py-32">
           <div className="hidden lg:flex flex-col justify-between menu-info opacity-0">
             <div>
-              <h3 className="text-xs uppercase tracking-widest text-gray-400 mb-4">
+              <h3 className="text-xs uppercase tracking-widest text-accent mb-4">
                 Kontakt
               </h3>
               <p className="text-xl font-serif leading-relaxed text-gray-300">
