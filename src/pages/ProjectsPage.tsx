@@ -120,7 +120,7 @@ export const ProjectsPage: React.FC = () => {
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-[#111]/60 to-[#111]/30 z-10" />
             <img
-              src="/projects/freiflaeche.jpg"
+              src="/projects/heroProject.jpg"
               alt="Projekte Hintergrund"
               className="w-full h-full object-cover opacity-60"
             />
