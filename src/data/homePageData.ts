@@ -29,25 +29,25 @@ export const processSteps: ProcessStep[] = [
     id: 1,
     title: "Beratung & Planung",
     desc: "Am Anfang steht das Verstehen. Wir analysieren Ihre Flächen, Ihre Anforderungen und entwickeln ein maßgeschneidertes Solarkonzept.",
-    img: "/processSteps/beratung_Strategie.jpg",
+    img: "/processSteps/beratung_Strategie.webp",
   },
   {
     id: 2,
     title: "Technische Auslegung",
     desc: "Unsere Experten übersetzen Konzepte in präzise Pläne. Statikprüfung, Komponentenauswahl und Genehmigungsplanung aus einer Hand.",
-    img: "/processSteps/design_Architektur.jpg",
+    img: "/processSteps/design_Architektur.webp",
   },
   {
     id: 3,
     title: "Montage & Installation",
     desc: "Unsere erfahrenen Teams montieren mit höchster Präzision. Fachgerechte Installation auf Freiflächen und Dächern aller Art.",
-    img: "/processSteps/montage.jpg",
+    img: "/processSteps/montage.webp",
   },
   {
     id: 4,
     title: "Inbetriebnahme & Service",
     desc: "Wir bringen Ihre Anlage sicher ans Netz. Professionelle Inbetriebnahme und zuverlässiger Service für langfristigen Ertrag.",
-    img: "/processSteps/Inbetriebnahme_Service.jpg",
+    img: "/processSteps/Inbetriebnahme_Service.webp",
   },
 ];
 

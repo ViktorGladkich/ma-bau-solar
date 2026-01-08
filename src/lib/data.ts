@@ -17,9 +17,9 @@ export const projectsData: ProjectData[] = [
     solution:
       "Wir entwickelten ein maßgeschneidertes Montagesystem, das optimal an die Dachstruktur angepasst wurde. Die Installation erfolgte termingerecht und professionell.",
     gallery: [
-      "/projects/sattlend2.jpg",
-      "/projects/sattlend3.jpg",
-      "/projects/sattlend4.jpg",
+      "/projects/sattlend2.webp",
+      "/projects/sattlend3.webp",
+      "/projects/sattlend4.webp",
     ],
   },
   {
@@ -31,16 +31,16 @@ export const projectsData: ProjectData[] = [
     location: "Reinfeld, Deutschland",
     kWp: "608,40 kWp",
     client: "",
-    imageUrl: "/projects/reinfeld.jpg",
+    imageUrl: "/projects/reinfeld.webp",
     description: "608,40 kWp Industriedachanlage in Reinfeld, Deutschland.",
     challenge:
       "Installation einer großflächigen PV-Anlage auf einem Industriedach in Reinfeld mit optimaler Ausrichtung für maximalen Energieertrag.",
     solution:
       "Professionelle Montage mit hochwertigen Komponenten und maßgeschneidertem Montagesystem. Das Projekt wurde termingerecht und nach höchsten Qualitätsstandards fertiggestellt.",
     gallery: [
-      "/projects/reinfeld2.jpg",
-      "/projects/reinfeld3.jpg",
-      "/projects/reinfeld4.jpg",
+      "/projects/reinfeld2.webp",
+      "/projects/reinfeld3.webp",
+      "/projects/reinfeld4.webp",
     ],
   },
   {
@@ -60,7 +60,7 @@ export const projectsData: ProjectData[] = [
       "Einsatz moderner Montagesysteme mit präziser Planung und professioneller Ausführung. Die Anlage wurde termingerecht installiert und ans Netz angeschlossen.",
     gallery: [
       "/projects/barchfeld2.jpg",
-      "/projects/barchfeld3.jpg",
+      "/projects/barchfeld3.webp",
       "/projects/barchfeld4.jpg",
     ],
   },
@@ -73,14 +73,14 @@ export const projectsData: ProjectData[] = [
     location: "Wuppertal, Deutschland",
     kWp: "59,76 kWp",
     client: "",
-    imageUrl: "/projects/wuppertal.jpg",
+    imageUrl: "/projects/wuppertal.webp",
     description: "59,76 kWp Gewerbedachanlage in Wuppertal, Deutschland.",
     challenge:
       "Installation einer modernen PV-Anlage auf einem Gewerbedach in Wuppertal mit optimaler Ausrichtung für maximalen Energieertrag.",
     solution:
       "Professionelle Montage mit hochwertigen Komponenten und präziser Ausführung. Das Projekt wurde termingerecht und nach höchsten Qualitätsstandards fertiggestellt.",
     gallery: [
-      "/projects/wuppertal2.jpg",
+      "/projects/wuppertal2.webp",
       "/projects/wuppertal3.jpg",
       "/projects/wuppertal4.jpg",
     ],
@@ -122,9 +122,9 @@ export const projectsData: ProjectData[] = [
     solution:
       "Wir entwickelten ein maßgeschneidertes Montagesystem, das optimal an die Dachstruktur angepasst wurde. Die Installation erfolgte termingerecht und professionell.",
     gallery: [
-      "/projects/norderstedt2.jpg",
-      "/projects/norderstedt3.jpg",
-      "/projects/norderstedt4.jpg",
+      "/projects/norderstedt2.webp",
+      "/projects/norderstedt3.webp",
+      "/projects/norderstedt4.webp",
     ],
   },
   {

@@ -19,25 +19,25 @@ export const processes: ProcessStep[] = [
     id: "01",
     title: "Beratung & Konzeption",
     text: "Jedes Projekt beginnt mit Zuhören. Wir analysieren Ihre Flächen, Ihre Anforderungen und Ihre Ziele. Unser Team entwickelt daraus maßgeschneiderte Solarkonzepte, die nicht nur effizient sind, sondern auch wirtschaftlich überzeugen.",
-    image: "/processSteps/beratung_Strategie.jpg",
+    image: "/processSteps/beratung_Strategie.webp",
   },
   {
     id: "02",
     title: "Technische Planung",
     text: "Unsere Experten übersetzen das Konzept in präzise Pläne. Wir prüfen Statik, wählen optimale Komponenten und kümmern uns um alle Genehmigungen. Transparente Dokumentation gibt Ihnen Sicherheit vor Baubeginn.",
-    image: "/processSteps/design_Architektur.jpg",
+    image: "/processSteps/design_Architektur.webp",
   },
   {
     id: "03",
     title: "Montage & Installation",
     text: "Unsere erfahrenen Montageteams arbeiten mit höchster Präzision. Ob Freifläche oder Dach – wir installieren fachgerecht und termingerecht. Qualität und Sicherheit stehen dabei immer an erster Stelle.",
-    image: "/processSteps/montage.jpg",
+    image: "/processSteps/montage.webp",
   },
   {
     id: "04",
     title: "Inbetriebnahme & Service",
     text: "Eine Solaranlage ist eine langfristige Investition. Wir übernehmen die professionelle Inbetriebnahme, Netzanmeldung und bieten zuverlässigen Service für dauerhaft optimale Erträge.",
-    image: "/processSteps/Inbetriebnahme_Service.jpg",
+    image: "/processSteps/Inbetriebnahme_Service.webp",
   },
 ];
 

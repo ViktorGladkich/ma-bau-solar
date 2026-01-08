@@ -6,19 +6,19 @@ import bgImage from "../assets/bgImage.webp";
 const column1 = [
   "/projects/78kWp_Berlin.jpg",
   "/projects/78kWp_Berlin3.jpg",
-  "/projects/norderstedt2.jpg",
+  "/projects/norderstedt2.webp",
 ];
 
 const column2 = [
-  "/projects/norderstedt4.jpg",
-  "/processSteps/Inbetriebnahme_Service.jpg",
-  "/projects/reinfeld3.jpg",
+  "/projects/norderstedt4.webp",
+  "/processSteps/Inbetriebnahme_Service.webp",
+  "/projects/reinfeld3.webp",
 ];
 
 const column3 = [
   "/materials/solarmodule.jpg",
-  "/projects/sattlend4.jpg",
-  "/projects/reinfeld.jpg",
+  "/projects/sattlend4.webp",
+  "/projects/reinfeld.webp",
 ];
 
 export const SplitBrandReveal: React.FC = () => {
