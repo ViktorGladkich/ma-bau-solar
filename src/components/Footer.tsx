@@ -33,6 +33,12 @@ export const Footer: React.FC = () => {
             Datenschutz
           </Link>
           <Link
+            to="/agb"
+            className="hover:text-white transition-colors cursor-hover p-2"
+          >
+            AGB
+          </Link>
+          <Link
             to="/contact"
             className="hover:text-white transition-colors cursor-hover p-2"
           >

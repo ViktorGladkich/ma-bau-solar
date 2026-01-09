@@ -55,6 +55,11 @@ const DatenschutzPage = lazy(() =>
     default: module.DatenschutzPage,
   }))
 );
+const AGBPage = lazy(() =>
+  import("./pages/AGBPage").then((module) => ({
+    default: module.AGBPage,
+  }))
+);
 const NotFoundPage = lazy(() =>
   import("./pages/NotFoundPage").then((module) => ({
     default: module.NotFoundPage,
@@ -178,6 +183,7 @@ const AppContent: React.FC = () => {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/impressum" element={<ImpressumPage />} />
             <Route path="/datenschutz" element={<DatenschutzPage />} />
+            <Route path="/agb" element={<AGBPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
