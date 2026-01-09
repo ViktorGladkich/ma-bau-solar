@@ -326,7 +326,7 @@ export const DatenschutzPage: React.FC = () => {
               Die Google Fonts sind lokal installiert. Eine Verbindung zu
               Servern von Google findet dabei nicht statt.
             </p>
-            <p>
+            <p className="mb-6">
               Weitere Informationen zu Google Fonts finden Sie unter{" "}
               <a
                 href="https://developers.google.com/fonts/faq"
@@ -346,6 +346,46 @@ export const DatenschutzPage: React.FC = () => {
                 https://policies.google.com/privacy
               </a>
               .
+            </p>
+
+            <h3 className="font-bold mb-2">Google Search Console</h3>
+            <p className="mb-4">
+              Wir nutzen die Google Search Console, ein Dienst der Google
+              Ireland Limited („Google"), Gordon House, Barrow Street, Dublin 4,
+              Irland, zur Überwachung und Optimierung der Auffindbarkeit unserer
+              Website in der Google-Suche.
+            </p>
+            <p className="mb-4">
+              Die Google Search Console erfasst technische Daten über die
+              Darstellung unserer Website in den Google-Suchergebnissen, wie
+              z.B.:
+            </p>
+            <ul className="list-disc list-inside mb-4 space-y-1">
+              <li>Suchanfragen, über die Nutzer auf unsere Website gelangen</li>
+              <li>Klickraten und Impressionen in den Suchergebnissen</li>
+              <li>Technische Fehler und Crawling-Statistiken</li>
+              <li>Indexierungsstatus unserer Seiten</li>
+            </ul>
+            <p className="mb-4">
+              Diese Daten werden ausschließlich in aggregierter Form
+              bereitgestellt und ermöglichen keine Rückschlüsse auf einzelne
+              Nutzer. Die Verarbeitung erfolgt auf Grundlage unseres
+              berechtigten Interesses an der Suchmaschinenoptimierung und
+              technischen Verbesserung unserer Website gemäß Art. 6 Abs. 1 lit.
+              f DSGVO.
+            </p>
+            <p className="mb-4">
+              Google ist unter dem EU-US Data Privacy Framework zertifiziert.
+              Weitere Informationen finden Sie in der Datenschutzerklärung von
+              Google:{" "}
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:underline"
+              >
+                https://policies.google.com/privacy
+              </a>
             </p>
           </section>
 
