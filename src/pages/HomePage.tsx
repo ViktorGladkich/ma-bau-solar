@@ -135,8 +135,10 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Startseite"
-        description="MA Bau GmbH – Ihr Experte für Photovoltaik und Bau in Dresden. Solaranlagen, Trockenbau, Renovierung und mehr – alles aus einer Hand."
+        title="MA Bau GmbH – Photovoltaik & Bau Experte Dresden"
+        description="MA Bau GmbH Dresden ✓ Ihr Experte für Photovoltaik-Montage, Solaranlagen, Freiflächen-PV, Dachmontage & Bau ✓ 42+ MWp installiert ✓ 100+ Projekte ✓ Deutschland & Europa ✓ Jetzt Anfrage stellen!"
+        keywords="MA Bau, MA Bau GmbH, MA Bau Dresden, Photovoltaik Dresden, Solaranlage Dresden, PV Montage Dresden, Photovoltaik Montage, Solar Dresden, Freifläche Photovoltaik, Dachmontage Solar, Industriedach Solar, Gewerbedach PV, Photovoltaik Berlin, Solaranlage Deutschland, PV-Anlage Installation"
+        url="https://mabaugmbh.de/"
       />
       <div ref={containerRef} className="bg-secondary">
         <Hero />

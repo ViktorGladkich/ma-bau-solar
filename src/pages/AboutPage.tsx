@@ -264,8 +264,10 @@ export const AboutPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Über Uns"
-        description="MA Bau GmbH – Ihr Experte für Photovoltaik und Bau in Dresden. Solaranlagen, Trockenbau, Renovierung, Abrissarbeiten und mehr."
+        title="Über MA Bau GmbH – Photovoltaik Experte seit 2020"
+        description="MA Bau GmbH Dresden – Seit 2020 Ihr zuverlässiger Partner für Photovoltaik ✓ 42+ MWp installiert ✓ 100+ erfolgreiche Projekte ✓ 5 Jahre Erfahrung ✓ Deutschland, Österreich & Europa ✓ Qualität aus Dresden"
+        keywords="MA Bau Geschichte, MA Bau GmbH Dresden, Photovoltaik Experte Dresden, Solar Unternehmen Dresden, PV Montage Firma, Solaranlage Spezialist, MA Bau Team, Photovoltaik Erfahrung"
+        url="https://mabaugmbh.de/about"
       />
 
       <div

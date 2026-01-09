@@ -180,8 +180,10 @@ export const ContactPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Kontakt"
-        description="Kontaktieren Sie MA Bau GmbH für Photovoltaik, Trockenbau, Renovierung und mehr. Ihr Experte für Bau und Solaranlagen in Dresden und Umgebung."
+        title="Kontakt – MA Bau GmbH Dresden"
+        description="Kontaktieren Sie MA Bau GmbH ✓ Photovoltaik-Beratung ✓ Kostenlose Erstberatung ✓ Telefon: +49 176 32187740 ✓ E-Mail: info@ma-bau-gmbh.de ✓ Dresden, Deutschland & Europa ✓ Jetzt Projekt anfragen!"
+        keywords="MA Bau Kontakt, MA Bau Dresden Kontakt, Photovoltaik Beratung, Solar Anfrage, PV Beratung Dresden, MA Bau Telefon, MA Bau Email, Solaranlage Anfrage"
+        url="https://mabaugmbh.de/contact"
       />
       <div
         ref={containerRef}

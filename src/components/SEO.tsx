@@ -6,6 +6,7 @@ interface SEOProps {
   url?: string;
   image?: string;
   keywords?: string;
+  type?: "website" | "article";
 }
 
 export const SEO: React.FC<SEOProps> = ({
@@ -14,10 +15,12 @@ export const SEO: React.FC<SEOProps> = ({
   url,
   image,
   keywords,
+  type = "website",
 }) => {
   useEffect(() => {
-    // Title with brand
-    document.title = `${title} | MA Bau GmbH – Photovoltaik Berlin`;
+    // Optimized title with brand for better ranking
+    const fullTitle = `${title} | MA Bau GmbH – Photovoltaik & Bau Dresden`;
+    document.title = fullTitle;
 
     // Helper function to create or update meta tags
     const updateMetaTag = (
@@ -43,9 +46,9 @@ export const SEO: React.FC<SEOProps> = ({
       description
     );
 
-    // Keywords
+    // Enhanced keywords with brand name for better ranking
     const defaultKeywords =
-      "Photovoltaik Berlin, Solaranlage, PV-Anlage, Solarmontage, MA Bau GmbH";
+      "MA Bau, MA Bau GmbH, MA Bau Dresden, Photovoltaik Dresden, Solaranlage Dresden, PV-Anlage, Solarmontage, Photovoltaik Berlin, Solaranlage Deutschland, Photovoltaik Montage, Freifläche Solar, Dachmontage Solar, Industriedach Solar, Gewerbedach Solar";
     updateMetaTag(
       "meta[name='keywords']",
       "name",
@@ -53,12 +56,16 @@ export const SEO: React.FC<SEOProps> = ({
       keywords || defaultKeywords
     );
 
+    // Author and brand
+    updateMetaTag("meta[name='author']", "name", "author", "MA Bau GmbH");
+    updateMetaTag("meta[name='publisher']", "name", "publisher", "MA Bau GmbH");
+
     // OpenGraph tags
     updateMetaTag(
       "meta[property='og:title']",
       "property",
       "og:title",
-      `${title} | MA Bau GmbH`
+      fullTitle
     );
     updateMetaTag(
       "meta[property='og:description']",
@@ -66,7 +73,7 @@ export const SEO: React.FC<SEOProps> = ({
       "og:description",
       description
     );
-    updateMetaTag("meta[property='og:type']", "property", "og:type", "website");
+    updateMetaTag("meta[property='og:type']", "property", "og:type", type);
     updateMetaTag(
       "meta[property='og:locale']",
       "property",
@@ -82,9 +89,24 @@ export const SEO: React.FC<SEOProps> = ({
 
     if (url) {
       updateMetaTag("meta[property='og:url']", "property", "og:url", url);
+      // Canonical URL
+      let canonical = document.querySelector("link[rel='canonical']");
+      if (!canonical) {
+        canonical = document.createElement("link");
+        canonical.setAttribute("rel", "canonical");
+        document.head.appendChild(canonical);
+      }
+      canonical.setAttribute("href", url);
     }
+
     if (image) {
       updateMetaTag("meta[property='og:image']", "property", "og:image", image);
+      updateMetaTag(
+        "meta[property='og:image:alt']",
+        "property",
+        "og:image:alt",
+        title
+      );
     }
 
     // Twitter Card tags
@@ -98,7 +120,7 @@ export const SEO: React.FC<SEOProps> = ({
       "meta[name='twitter:title']",
       "name",
       "twitter:title",
-      `${title} | MA Bau GmbH`
+      fullTitle
     );
     updateMetaTag(
       "meta[name='twitter:description']",
@@ -115,9 +137,28 @@ export const SEO: React.FC<SEOProps> = ({
       );
     }
 
-    // Robots
-    updateMetaTag("meta[name='robots']", "name", "robots", "index, follow");
-  }, [title, description, url, image, keywords]);
+    // Robots - ensure indexing
+    updateMetaTag(
+      "meta[name='robots']",
+      "name",
+      "robots",
+      "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    );
+    updateMetaTag(
+      "meta[name='googlebot']",
+      "name",
+      "googlebot",
+      "index, follow"
+    );
+
+    // Language
+    updateMetaTag(
+      "meta[http-equiv='content-language']",
+      "http-equiv",
+      "content-language",
+      "de"
+    );
+  }, [title, description, url, image, keywords, type]);
 
   return null;
 };

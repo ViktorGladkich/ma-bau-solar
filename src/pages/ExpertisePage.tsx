@@ -37,8 +37,10 @@ export const ExpertisePage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Expertise & Leistungen"
-        description="Unser Prozess von der Planung bis zur Inbetriebnahme. Solaranlagen für Freiflächen und Dächer aus einer Hand."
+        title="Leistungen – Photovoltaik Montage & Bau Services"
+        description="MA Bau GmbH Leistungen ✓ Photovoltaik-Montage ✓ Freiflächen-PV ✓ Dachmontage ✓ Industriedach ✓ Gewerbedach ✓ Trockenbau ✓ Renovierung ✓ Komplettservice von Planung bis Inbetriebnahme ✓ Deutschland & Europa"
+        keywords="MA Bau Leistungen, Photovoltaik Montage, PV Installation, Freifläche Solar, Dachmontage PV, Industriedach Photovoltaik, Gewerbedach Solar, Trockenbau Dresden, Renovierung, Solaranlage Installation, PV Montage Service"
+        url="https://mabaugmbh.de/expertise"
       />
 
       <div className="bg-secondary min-h-dvh overflow-x-hidden">

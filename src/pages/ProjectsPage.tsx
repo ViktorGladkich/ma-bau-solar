@@ -107,8 +107,10 @@ export const ProjectsPage: React.FC = () => {
   return (
     <>
       <SEO
-        title="Projekte"
-        description="Unsere realisierten Projekte: Photovoltaik-Anlagen, Trockenbau, Renovierungen und mehr. MA Bau GmbH – professionelles Handwerk aus Dresden."
+        title="Projekte – Realisierte Photovoltaik-Anlagen"
+        description="MA Bau GmbH Referenzprojekte ✓ 100+ realisierte Photovoltaik-Anlagen ✓ Freiflächen, Industrie- & Gewerbedächer ✓ 42+ MWp installiert ✓ Deutschland, Österreich & Europa ✓ Erfolgreiche Solar-Projekte ansehen"
+        keywords="MA Bau Projekte, Photovoltaik Referenzen, Solar Projekte, PV Anlagen Beispiele, Freifläche Referenz, Industriedach Projekt, Gewerbedach Solar, MA Bau Referenzen, Photovoltaik Portfolio"
+        url="https://mabaugmbh.de/projects"
       />
       <div
         ref={containerRef}
