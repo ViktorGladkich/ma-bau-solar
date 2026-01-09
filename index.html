@@ -69,13 +69,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Preload Critical Resources for LCP -->
-    <link
-      rel="preload"
-      as="video"
-      href="https://res.cloudinary.com/dcphhfemb/video/upload/v1767643382/hero_vyelws.mp4"
-      fetchpriority="high"
-    />
+    <!-- Preconnect to Cloudinary for faster video loading -->
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"

@@ -9,6 +9,7 @@ import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { CustomCursor } from "./components/CustomCursor";
 import { AIChatBot } from "./components/AIChatBot";
+import { ScrollProgressBar } from "./components/ScrollProgressBar";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -142,6 +143,7 @@ const AppContent: React.FC = () => {
   return (
     <div className="relative w-full min-h-screen bg-secondary cursor-none text-primary font-sans selection:bg-accent selection:text-white">
       <CustomCursor />
+      <ScrollProgressBar />
       <PageTransitionOverlay />
 
       {/* Initial Loader Overlay */}
