@@ -148,25 +148,4 @@ export const projectsData: ProjectData[] = [
       "/projects/78kWp_Berlin4.jpg",
     ],
   },
-  {
-    id: 8,
-    slug: "wohnanlage-prenzlauer-berg",
-    title: "Wohnanlage Prenzlauer Berg",
-    category: "Wohngebäude",
-    year: "2021",
-    location: "Berlin-Prenzlauer Berg",
-    kWp: "120 kWp",
-    client: "",
-    imageUrl: "/projects/wohnanlage.jpg",
-    description: "120 kWp auf drei verbundenen Wohnhäusern.",
-    challenge:
-      "Installation auf denkmalgeschützten Altbauten mit begrenzter Dachfläche und strengen Gestaltungsauflagen.",
-    solution:
-      "Einsatz von schwarzen In-Dach-Modulen, die sich harmonisch in die historische Dachlandschaft einfügen.",
-    gallery: [
-      "/projects/wohnanlage2.jpg",
-      "/projects/wohnanlage3.jpg",
-      "/projects/wohnanlage4.jpg",
-    ],
-  },
 ];

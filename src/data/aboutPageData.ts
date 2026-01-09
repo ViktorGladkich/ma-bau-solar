@@ -29,8 +29,8 @@ export const milestones: Milestone[] = [
   {
     year: "2021",
     title: "Erste Großprojekte",
-    desc: "Erfolgreiche Realisierung erster Großanlagen auf Industrie- und Gewerbedächern in Dresden und Umgebung. Aufbau eines erfahrenen Montageteams und Etablierung als zuverlässiger Partner für Gewerbekunden in Sachsen.",
-    img: "/projects/freiflaeche2.jpg",
+    desc: "Erfolgreiche Realisierung erster Großanlagen auf Industrie- und Gewerbedächern. Highlight: 819 kWp Industriedachanlage in Sattlend, Österreich - ein Meilenstein in unserer Firmengeschichte mit professioneller Umsetzung unter Einhaltung lokaler Vorschriften und spezifischer Anforderungen.",
+    img: "/projects/sattlend.jpg",
   },
   {
     year: "2022",
