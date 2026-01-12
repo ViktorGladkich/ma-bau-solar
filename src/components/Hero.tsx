@@ -3,11 +3,13 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+// Optimized video with Cloudinary transformations
 const heroVideo =
-  "https://res.cloudinary.com/dcphhfemb/video/upload/v1767643382/hero_vyelws.mp4";
+  "https://res.cloudinary.com/dcphhfemb/video/upload/q_auto:good,f_auto/v1767643382/hero_vyelws.mp4";
 
+// Optimized thumbnail - use video path, not image path
 const heroVideoThumbnail =
-  "https://res.cloudinary.com/dcphhfemb/video/upload/v1767643382/hero_vyelws.jpg";
+  "https://res.cloudinary.com/dcphhfemb/video/upload/q_auto:good,w_1920/v1767643382/hero_vyelws.jpg";
 
 export const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);

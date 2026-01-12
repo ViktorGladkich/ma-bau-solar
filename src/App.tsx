@@ -157,6 +157,8 @@ const AppContent: React.FC = () => {
           <img
             src="/logo/logo-Mabau.png"
             alt="MA Bau Logo"
+            width="96"
+            height="89"
             className="loader-logo w-24 h-24 object-contain opacity-0"
           />
         </div>

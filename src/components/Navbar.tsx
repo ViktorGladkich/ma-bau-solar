@@ -91,6 +91,8 @@ export const Navbar: React.FC = () => {
               <img
                 src="/logo/logo-Mabau.png"
                 alt="MA Bau Logo"
+                width="80"
+                height="74"
                 className="w-20 md:w-20 object-contain "
               />
             </div>
