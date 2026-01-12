@@ -136,7 +136,7 @@ export const Hero: React.FC = () => {
             description:
               "Von der Fläche zur fertigen Anlage – wir setzen Solarprojekte zuverlässig und fachgerecht um.",
             thumbnailUrl: heroVideoThumbnail,
-            uploadDate: "2026-01-05",
+            uploadDate: "2026-01-05T12:00:00+01:00",
             contentUrl: heroVideo,
             embedUrl: heroVideo,
             duration: "PT30S",
