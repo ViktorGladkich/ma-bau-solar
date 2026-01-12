@@ -6,6 +6,9 @@ gsap.registerPlugin(ScrollTrigger);
 const heroVideo =
   "https://res.cloudinary.com/dcphhfemb/video/upload/v1767643382/hero_vyelws.mp4";
 
+const heroVideoThumbnail =
+  "https://res.cloudinary.com/dcphhfemb/video/upload/v1767643382/hero_vyelws.jpg";
+
 export const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -121,110 +124,135 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    // CHANGED: h-[100svh] -> h[100dvh] to use dynamic viewport height
-    <header
-      ref={containerRef}
-      className="relative w-full h-[100vh] md:h-screen overflow-hidden bg-white will-change-transform transform-gpu contain-layout"
-      role="banner"
-      aria-label="Hero Bereich"
-    >
-      {/* ================= MOBILE LAYOUT (< 768px) ================= */}
-      <div className="md:hidden relative w-full h-full flex flex-col justify-end pb-24 px-6">
-        {/* Background Video Fixed */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/30 z-10" />
-          <video
-            src={heroVideo}
-            className="mobile-bg-img w-full h-full object-cover will-change-transform"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        </div>
+    <>
+      {/* Structured Data for Video */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            name: "MA Bau GmbH - Photovoltaik Expertise",
+            description:
+              "Von der Fläche zur fertigen Anlage – wir setzen Solarprojekte zuverlässig und fachgerecht um.",
+            thumbnailUrl: heroVideoThumbnail,
+            uploadDate: "2026-01-05",
+            contentUrl: heroVideo,
+            embedUrl: heroVideo,
+            duration: "PT30S",
+          }),
+        }}
+      />
 
-        {/* Mobile Content */}
-        <div className="mobile-hero-content relative z-20 text-secondary mb-4">
-          <div className="flex items-center gap-3 mb-6 opacity-80">
-            <div className="h-[1px] w-8 bg-accent"></div>
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent">
-              MA Bau GmbH – Photovoltaik
-            </span>
+      {/* CHANGED: h-[100svh] -> h[100dvh] to use dynamic viewport height */}
+      <header
+        ref={containerRef}
+        className="relative w-full h-[100vh] md:h-screen overflow-hidden bg-white will-change-transform transform-gpu contain-layout"
+        role="banner"
+        aria-label="Hero Bereich"
+      >
+        {/* ================= MOBILE LAYOUT (< 768px) ================= */}
+        <div className="md:hidden relative w-full h-full flex flex-col justify-end pb-24 px-6">
+          {/* Background Video Fixed */}
+          <div className="absolute inset-0 z-0 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/30 z-10" />
+            <video
+              src={heroVideo}
+              poster={heroVideoThumbnail}
+              className="mobile-bg-img w-full h-full object-cover will-change-transform"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
           </div>
 
-          <h1 className="text-5xl font-serif leading-[1.05] mb-6 drop-shadow-lg">
-            Sonne.
-            <br />
-            <span className="italic text-accent">Nutzen.</span>
-          </h1>
+          {/* Mobile Content */}
+          <div className="mobile-hero-content relative z-20 text-secondary mb-4">
+            <div className="flex items-center gap-3 mb-6 opacity-80">
+              <div className="h-[1px] w-8 bg-accent"></div>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent">
+                MA Bau GmbH – Photovoltaik
+              </span>
+            </div>
 
-          <p className="text-white/80 font-light text-base leading-relaxed max-w-xs mb-10 drop-shadow-md">
-            Von der Fläche zur fertigen Anlage – Solarprojekte zuverlässig und
-            fachgerecht umgesetzt.
-          </p>
+            <h1 className="text-5xl font-serif leading-[1.05] mb-6 drop-shadow-lg">
+              Sonne.
+              <br />
+              <span className="italic text-accent">Nutzen.</span>
+            </h1>
 
-          {/* Scroll Indicator */}
-          <div className="flex items-center gap-3 text-white/50">
-            <span className="text-[10px] uppercase tracking-widest">
-              Scrollen
-            </span>
-            <div className="w-12 h-[1px] bg-white/30">
-              <div className="w-full h-full bg-accent origin-left animate-[scale-x_2s_ease-in-out_infinite]"></div>
+            <p className="text-white/80 font-light text-base leading-relaxed max-w-xs mb-10 drop-shadow-md">
+              Von der Fläche zur fertigen Anlage – Solarprojekte zuverlässig und
+              fachgerecht umgesetzt.
+            </p>
+
+            {/* Scroll Indicator */}
+            <div className="flex items-center gap-3 text-white/50">
+              <span className="text-[10px] uppercase tracking-widest">
+                Scrollen
+              </span>
+              <div className="w-12 h-[1px] bg-white/30">
+                <div className="w-full h-full bg-accent origin-left animate-[scale-x_2s_ease-in-out_infinite]"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* ================= DESKTOP LAYOUT (>= 768px) ================= */}
-      <div className="hidden md:flex w-full h-full relative">
-        {/* Left Side: Initial Text */}
-        <div className="hero-initial-text absolute top-0 left-0 w-[45%] h-full flex flex-col justify-center px-12 lg:px-24 z-10 bg-white will-change-transform">
-          <div className="overflow-hidden">
-            <span className="block text-xs font-bold uppercase tracking-widest text-accent mb-6">
-              MA Bau GmbH – Photovoltaik
+        {/* ================= DESKTOP LAYOUT (>= 768px) ================= */}
+        <div className="hidden md:flex w-full h-full relative">
+          {/* Left Side: Initial Text */}
+          <div className="hero-initial-text absolute top-0 left-0 w-[45%] h-full flex flex-col justify-center px-12 lg:px-24 z-10 bg-white will-change-transform">
+            <div className="overflow-hidden">
+              <span className="block text-xs font-bold uppercase tracking-widest text-accent mb-6">
+                MA Bau GmbH – Photovoltaik
+              </span>
+            </div>
+            <h1 className="text-7xl lg:text-8xl font-serif text-primary leading-[1.05] mb-8">
+              Sonne. <br />
+              <span className="italic text-accent">Nutzen.</span>
+            </h1>
+            <p className="text-primary/60 font-light max-w-md leading-relaxed text-lg">
+              Von der Fläche zur fertigen Anlage – wir setzen Solarprojekte
+              zuverlässig und fachgerecht um.
+            </p>
+
+            <div className="scroll-prompt mt-20 flex items-center gap-4 text-primary/30">
+              <div className="h-[1px] w-12 bg-primary/20"></div>
+              <span className="text-xs uppercase tracking-widest">
+                Entdecken
+              </span>
+            </div>
+          </div>
+
+          {/* Right Side: Video Wrapper */}
+          <div
+            className="hero-image-wrapper absolute top-0 right-0 w-[55%] min-h-full h-full overflow-hidden z-0 bg-black will-change-transform backface-hidden"
+            style={{ transformStyle: "preserve-3d" }}
+          >
+            <div className="hero-overlay absolute inset-0 bg-black/0 z-10 pointer-events-none transition-opacity"></div>
+            <video
+              src={heroVideo}
+              poster={heroVideoThumbnail}
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          </div>
+
+          {/* Final Text (Centered, Hidden Initially) */}
+          <div className="hero-final-text absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none text-center px-4 opacity-0">
+            <h2 className="text-8xl lg:text-9xl font-serif text-accent mix-blend-multiply ">
+              MA BAU
+            </h2>
+            <span className="text-primary text-sm uppercase tracking-[0.3em] mb-6 drop-shadow-md">
+              Photovoltaik
             </span>
           </div>
-          <h1 className="text-7xl lg:text-8xl font-serif text-primary leading-[1.05] mb-8">
-            Sonne. <br />
-            <span className="italic text-accent">Nutzen.</span>
-          </h1>
-          <p className="text-primary/60 font-light max-w-md leading-relaxed text-lg">
-            Von der Fläche zur fertigen Anlage – wir setzen Solarprojekte
-            zuverlässig und fachgerecht um.
-          </p>
-
-          <div className="scroll-prompt mt-20 flex items-center gap-4 text-primary/30">
-            <div className="h-[1px] w-12 bg-primary/20"></div>
-            <span className="text-xs uppercase tracking-widest">Entdecken</span>
-          </div>
         </div>
-
-        {/* Right Side: Video Wrapper */}
-        <div
-          className="hero-image-wrapper absolute top-0 right-0 w-[55%] min-h-full h-full overflow-hidden z-0 bg-black will-change-transform backface-hidden"
-          style={{ transformStyle: "preserve-3d" }}
-        >
-          <div className="hero-overlay absolute inset-0 bg-black/0 z-10 pointer-events-none transition-opacity"></div>
-          <video
-            src={heroVideo}
-            className="w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        </div>
-
-        {/* Final Text (Centered, Hidden Initially) */}
-        <div className="hero-final-text absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none text-center px-4 opacity-0">
-          <h2 className="text-8xl lg:text-9xl font-serif text-accent mix-blend-multiply ">
-            MA BAU
-          </h2>
-          <span className="text-primary text-sm uppercase tracking-[0.3em] mb-6 drop-shadow-md">
-            Photovoltaik
-          </span>
-        </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };

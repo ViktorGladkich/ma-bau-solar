@@ -55,7 +55,15 @@
   <!-- Datenschutz -->
   <url>
     <loc>https://mabaugmbh.de/datenschutz</loc>
-    <lastmod>2026-01-09</lastmod>
+    <lastmod>2026-01-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- AGB -->
+  <url>
+    <loc>https://mabaugmbh.de/agb</loc>
+    <lastmod>2026-01-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
