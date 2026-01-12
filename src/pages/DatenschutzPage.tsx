@@ -300,6 +300,24 @@ export const DatenschutzPage: React.FC = () => {
                 weiter.
               </p>
               <p className="mb-4">
+                <strong>Verwendung von Web3Forms:</strong> Unser Kontaktformular
+                nutzt den Dienst Web3Forms (Anbieter: Web3Forms, USA) zur
+                Übermittlung Ihrer Nachrichten. Dabei werden Ihre eingegebenen
+                Daten (Name, E-Mail, Nachricht) über eine sichere Verbindung an
+                Web3Forms übermittelt und anschließend an unsere E-Mail-Adresse
+                weitergeleitet. Web3Forms speichert keine personenbezogenen
+                Daten dauerhaft. Weitere Informationen finden Sie in der
+                Datenschutzerklärung von Web3Forms:{" "}
+                <a
+                  href="https://web3forms.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:underline"
+                >
+                  https://web3forms.com/privacy
+                </a>
+              </p>
+              <p className="mb-4">
                 Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6
                 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines
                 Vertrags zusammenhängt oder zur Durchführung vorvertraglicher
