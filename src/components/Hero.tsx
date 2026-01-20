@@ -66,7 +66,7 @@ export const Hero: React.FC = () => {
             duration: 1,
             ease: "power2.inOut",
           },
-          0
+          0,
         );
 
         // 2. Image expands
@@ -77,7 +77,7 @@ export const Hero: React.FC = () => {
             duration: 1,
             ease: "power2.inOut",
           },
-          0
+          0,
         );
 
         // 3. Overlay darkens
@@ -88,7 +88,7 @@ export const Hero: React.FC = () => {
           ".hero-final-text",
           { y: 60, opacity: 0, scale: 0.95 },
           { y: 0, opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" },
-          ">-0.2"
+          ">-0.2",
         );
       });
 
@@ -103,7 +103,7 @@ export const Hero: React.FC = () => {
             opacity: 1,
             duration: 1.5,
             ease: "power2.out",
-          }
+          },
         );
 
         // Text Entrance (Play once, do not scrub)
@@ -117,7 +117,7 @@ export const Hero: React.FC = () => {
             stagger: 0.1,
             delay: 0.5,
             ease: "power3.out",
-          }
+          },
         );
       });
     }, containerRef);
@@ -134,9 +134,9 @@ export const Hero: React.FC = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "VideoObject",
-            name: "MA Bau GmbH - Photovoltaik Expertise",
+            name: "MA Bau GmbH - Bau & Energie Expertise",
             description:
-              "Von der Fläche zur fertigen Anlage – wir setzen Solarprojekte zuverlässig und fachgerecht um.",
+              "Von Photovoltaik bis Renovierung – wir setzen Ihre Projekte professionell und zuverlässig um.",
             thumbnailUrl: heroVideoThumbnail,
             uploadDate: "2026-01-05T12:00:00+01:00",
             contentUrl: heroVideo,
@@ -174,19 +174,19 @@ export const Hero: React.FC = () => {
             <div className="flex items-center gap-3 mb-6 opacity-80">
               <div className="h-[1px] w-8 bg-accent"></div>
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent">
-                MA Bau GmbH – Photovoltaik
+                MA Bau GmbH – Bau & Energie
               </span>
             </div>
 
             <h1 className="text-5xl font-serif leading-[1.05] mb-6 drop-shadow-lg">
-              Sonne.
+              Bauen.
               <br />
-              <span className="italic text-accent">Nutzen.</span>
+              <span className="italic text-accent">Gestalten.</span>
             </h1>
 
             <p className="text-white/80 font-light text-base leading-relaxed max-w-xs mb-10 drop-shadow-md">
-              Von der Fläche zur fertigen Anlage – Solarprojekte zuverlässig und
-              fachgerecht umgesetzt.
+              Von Photovoltaik bis Renovierung – Ihre Projekte professionell und
+              zuverlässig umgesetzt.
             </p>
 
             {/* Scroll Indicator */}
@@ -207,16 +207,16 @@ export const Hero: React.FC = () => {
           <div className="hero-initial-text absolute top-0 left-0 w-[45%] h-full flex flex-col justify-center px-12 lg:px-24 z-10 bg-white will-change-transform">
             <div className="overflow-hidden">
               <span className="block text-xs font-bold uppercase tracking-widest text-accent mb-6">
-                MA Bau GmbH – Photovoltaik
+                MA Bau GmbH – Bau & Energie
               </span>
             </div>
             <h1 className="text-7xl lg:text-8xl font-serif text-primary leading-[1.05] mb-8">
-              Sonne. <br />
-              <span className="italic text-accent">Nutzen.</span>
+              Bauen. <br />
+              <span className="italic text-accent">Gestalten.</span>
             </h1>
             <p className="text-primary/60 font-light max-w-md leading-relaxed text-lg">
-              Von der Fläche zur fertigen Anlage – wir setzen Solarprojekte
-              zuverlässig und fachgerecht um.
+              Von Photovoltaik bis Renovierung – wir setzen Ihre Projekte
+              professionell und zuverlässig um.
             </p>
 
             <div className="scroll-prompt mt-20 flex items-center gap-4 text-primary/30">
@@ -250,7 +250,7 @@ export const Hero: React.FC = () => {
               MA BAU
             </h2>
             <span className="text-primary text-sm uppercase tracking-[0.3em] mb-6 drop-shadow-md">
-              Photovoltaik
+              Bau & Energie
             </span>
           </div>
         </div>

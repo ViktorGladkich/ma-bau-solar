@@ -43,6 +43,9 @@ export const ChatInput: React.FC<ChatInputProps> = ({
         <input
           ref={inputRef}
           type="text"
+          id="chat-input"
+          name="message"
+          autoComplete="off"
           value={inputValue}
           onChange={(e) => onInputChange(e.target.value)}
           onKeyPress={onKeyPress}

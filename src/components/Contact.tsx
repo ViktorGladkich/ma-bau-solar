@@ -48,6 +48,9 @@ export const Contact: React.FC = () => {
             <div className="group relative">
               <input
                 type="text"
+                id="contact-name"
+                name="name"
+                autoComplete="name"
                 placeholder="Name"
                 className="w-full bg-transparent border-b border-white/20 py-3 md:py-4 text-lg md:text-xl focus:outline-none focus:border-accent transition-colors placeholder:text-white/30"
               />
@@ -55,6 +58,9 @@ export const Contact: React.FC = () => {
             <div className="group relative">
               <input
                 type="email"
+                id="contact-email"
+                name="email"
+                autoComplete="email"
                 placeholder="Email"
                 className="w-full bg-transparent border-b border-white/20 py-3 md:py-4 text-lg md:text-xl focus:outline-none focus:border-accent transition-colors placeholder:text-white/30"
               />
@@ -62,6 +68,9 @@ export const Contact: React.FC = () => {
             <div className="group relative">
               <input
                 type="text"
+                id="contact-company"
+                name="company"
+                autoComplete="organization"
                 placeholder="Unternehmen"
                 className="w-full bg-transparent border-b border-white/20 py-3 md:py-4 text-lg md:text-xl focus:outline-none focus:border-accent transition-colors placeholder:text-white/30"
               />
@@ -69,6 +78,9 @@ export const Contact: React.FC = () => {
             <div className="group relative">
               <textarea
                 rows={3}
+                id="contact-message"
+                name="message"
+                autoComplete="off"
                 placeholder="Nachricht"
                 className="w-full bg-transparent border-b border-white/20 py-3 md:py-4 text-lg md:text-xl focus:outline-none focus:border-accent transition-colors placeholder:text-white/30 resize-none"
               ></textarea>

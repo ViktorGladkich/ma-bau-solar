@@ -46,7 +46,7 @@ export const ContactPage: React.FC = () => {
           stagger: 0.15,
           ease: "power4.out",
           delay: 0.2,
-        }
+        },
       );
 
       // 2. Info Columns Reveal
@@ -60,7 +60,7 @@ export const ContactPage: React.FC = () => {
           stagger: 0.1,
           ease: "power3.out",
           delay: 0.8,
-        }
+        },
       );
 
       // 3. Form Reveal
@@ -74,7 +74,7 @@ export const ContactPage: React.FC = () => {
           stagger: 0.1,
           ease: "power3.out",
           delay: 1,
-        }
+        },
       );
     }, containerRef);
 
@@ -107,7 +107,7 @@ export const ContactPage: React.FC = () => {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -163,13 +163,13 @@ export const ContactPage: React.FC = () => {
       console.error("Form error:", error);
       // Fallback: open mailto link
       const mailtoLink = `mailto:info@ma-bau-gmbh.de?subject=${encodeURIComponent(
-        `Anfrage von ${formData.firstName} ${formData.lastName}`
+        `Anfrage von ${formData.firstName} ${formData.lastName}`,
       )}&body=${encodeURIComponent(
         `Name: ${formData.firstName} ${formData.lastName}\nE-Mail: ${
           formData.email
         }\nUnternehmen: ${
           formData.company || "Nicht angegeben"
-        }\n\nNachricht:\n${formData.message}`
+        }\n\nNachricht:\n${formData.message}`,
       )}`;
       window.location.href = mailtoLink;
     } finally {
@@ -327,12 +327,17 @@ export const ContactPage: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-10">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="form-item group relative">
-                      <label className="block text-xs uppercase tracking-widest text-primary mb-2">
+                      <label
+                        htmlFor="firstName"
+                        className="block text-xs uppercase tracking-widest text-primary mb-2"
+                      >
                         Vorname *
                       </label>
                       <input
                         type="text"
+                        id="firstName"
                         name="firstName"
+                        autoComplete="given-name"
                         value={formData.firstName}
                         onChange={handleInputChange}
                         placeholder="Max"
@@ -350,12 +355,17 @@ export const ContactPage: React.FC = () => {
                     </div>
 
                     <div className="form-item group relative">
-                      <label className="block text-xs uppercase tracking-widest text-primary mb-2">
+                      <label
+                        htmlFor="lastName"
+                        className="block text-xs uppercase tracking-widest text-primary mb-2"
+                      >
                         Nachname *
                       </label>
                       <input
                         type="text"
+                        id="lastName"
                         name="lastName"
+                        autoComplete="family-name"
                         value={formData.lastName}
                         onChange={handleInputChange}
                         placeholder="Mustermann"
@@ -374,12 +384,17 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="form-item group relative">
-                    <label className="block text-xs uppercase tracking-widest text-primary mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-xs uppercase tracking-widest text-primary mb-2"
+                    >
                       E-Mail Adresse *
                     </label>
                     <input
                       type="email"
+                      id="email"
                       name="email"
+                      autoComplete="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="name@firma.de"
@@ -397,12 +412,17 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="form-item group relative">
-                    <label className="block text-xs uppercase tracking-widest text-primary mb-2">
+                    <label
+                      htmlFor="company"
+                      className="block text-xs uppercase tracking-widest text-primary mb-2"
+                    >
                       Unternehmen
                     </label>
                     <input
                       type="text"
+                      id="company"
                       name="company"
+                      autoComplete="organization"
                       value={formData.company}
                       onChange={handleInputChange}
                       placeholder="Firmenname (Optional)"
@@ -411,12 +431,17 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="form-item group relative">
-                    <label className="block text-xs uppercase tracking-widest text-primary mb-2">
+                    <label
+                      htmlFor="message"
+                      className="block text-xs uppercase tracking-widest text-primary mb-2"
+                    >
                       Ihre Nachricht *
                     </label>
                     <textarea
                       rows={4}
+                      id="message"
                       name="message"
+                      autoComplete="off"
                       value={formData.message}
                       onChange={handleInputChange}
                       placeholder="Erzählen Sie uns von Ihrem Projekt..."

@@ -19,8 +19,6 @@ export const Navbar: React.FC = () => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
       const tl = gsap.timeline();
-
-      // Make visible before animating
       gsap.set(".menu-overlay", { visibility: "visible" });
 
       tl.to(".menu-overlay", { y: "0%", duration: 0.8, ease: "power4.inOut" })
@@ -28,13 +26,13 @@ export const Navbar: React.FC = () => {
           ".menu-item",
           { y: 50, opacity: 0 },
           { y: 0, opacity: 1, stagger: 0.1, duration: 0.6, ease: "power3.out" },
-          "-=0.4"
+          "-=0.4",
         )
         .fromTo(
           ".menu-info",
           { opacity: 0 },
           { opacity: 1, duration: 0.6 },
-          "-=0.4"
+          "-=0.4",
         );
     } else {
       document.body.style.overflow = "";
@@ -45,14 +43,12 @@ export const Navbar: React.FC = () => {
         duration: 0.8,
         ease: "power4.inOut",
         onComplete: () => {
-          // Hide visibility after animation finishes to prevent selecting text
           gsap.set(".menu-overlay", { visibility: "hidden" });
         },
       });
     }
   }, [isOpen]);
 
-  // Updated navigation structure - Added Home, Removed Journal
   const navLinks = [
     { name: "Startseite", to: "/", label: "01" },
     { name: "Projekte", to: "/projects", label: "02" },
@@ -99,7 +95,7 @@ export const Navbar: React.FC = () => {
 
             {/* Typographic Lockup */}
             <div
-              className={`flex flex-col justify-center transition-opacity duration-700 ${
+              className={`hidden md:flex flex-col justify-center transition-opacity duration-700 ${
                 scrolled ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -140,8 +136,8 @@ export const Navbar: React.FC = () => {
                     isOpen
                       ? "bg-accent"
                       : scrolled
-                      ? "bg-primary"
-                      : "bg-secondary"
+                        ? "bg-primary"
+                        : "bg-secondary"
                   } ${
                     isOpen
                       ? "w-6 rotate-45 translate-y-0 duration-500 delay-100"
@@ -155,8 +151,8 @@ export const Navbar: React.FC = () => {
                     isOpen
                       ? "bg-accent"
                       : scrolled
-                      ? "bg-primary"
-                      : "bg-secondary"
+                        ? "bg-primary"
+                        : "bg-secondary"
                   } ${
                     isOpen
                       ? "w-0 opacity-0 duration-300 delay-0"
@@ -170,8 +166,8 @@ export const Navbar: React.FC = () => {
                     isOpen
                       ? "bg-accent"
                       : scrolled
-                      ? "bg-primary"
-                      : "bg-secondary"
+                        ? "bg-primary"
+                        : "bg-secondary"
                   } ${
                     isOpen
                       ? "w-6 -rotate-45 translate-y-0 duration-500 delay-150"
