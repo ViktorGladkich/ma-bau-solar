@@ -54,6 +54,10 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
           dangerouslySetInnerHTML={{
             __html: message.content
               .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+              .replace(
+                /\[([^\]]+)\]\(([^)]+)\)/g,
+                '<a href="$2" class="text-accent underline hover:text-accent/80 transition-colors">$1</a>',
+              )
               .replace(/\n/g, "<br/>"),
           }}
         />
