@@ -20,50 +20,50 @@ ScrollTrigger.config({
 });
 
 const HomePage = lazy(() =>
-  import("./pages/HomePage").then((module) => ({ default: module.HomePage }))
+  import("./pages/HomePage").then((module) => ({ default: module.HomePage })),
 );
 const AboutPage = lazy(() =>
-  import("./pages/AboutPage").then((module) => ({ default: module.AboutPage }))
+  import("./pages/AboutPage").then((module) => ({ default: module.AboutPage })),
 );
 const ExpertisePage = lazy(() =>
   import("./pages/ExpertisePage").then((module) => ({
     default: module.ExpertisePage,
-  }))
+  })),
 );
 const ProjectsPage = lazy(() =>
   import("./pages/ProjectsPage").then((module) => ({
     default: module.ProjectsPage,
-  }))
+  })),
 );
 const ProjectDetail = lazy(() =>
   import("./pages/ProjectDetail").then((module) => ({
     default: module.ProjectDetail,
-  }))
+  })),
 );
 const ContactPage = lazy(() =>
   import("./pages/ContactPage").then((module) => ({
     default: module.ContactPage,
-  }))
+  })),
 );
 const ImpressumPage = lazy(() =>
   import("./pages/ImpressumPage").then((module) => ({
     default: module.ImpressumPage,
-  }))
+  })),
 );
 const DatenschutzPage = lazy(() =>
   import("./pages/DatenschutzPage").then((module) => ({
     default: module.DatenschutzPage,
-  }))
+  })),
 );
 const AGBPage = lazy(() =>
   import("./pages/AGBPage").then((module) => ({
     default: module.AGBPage,
-  }))
+  })),
 );
 const NotFoundPage = lazy(() =>
   import("./pages/NotFoundPage").then((module) => ({
     default: module.NotFoundPage,
-  }))
+  })),
 );
 
 const ScrollToTop = () => {
@@ -98,7 +98,13 @@ const PageTransitionOverlay = () => {
       className="fixed inset-0 bg-white z-[60] pointer-events-none flex items-center justify-center"
       aria-hidden="true"
     >
-      <span className="text-accent font-serif text-2xl italic">MA Bau</span>
+      <img
+        src="/logo/logo-Mabau.png"
+        alt="MA Bau"
+        width="80"
+        height="74"
+        className="w-20 h-20 object-contain opacity-80"
+      />
     </div>
   );
 };
@@ -110,40 +116,42 @@ const LoadingSpinner = () => (
 );
 
 const AppContent: React.FC = () => {
+  const [showPreloader, setShowPreloader] = React.useState(() => {
+    return !sessionStorage.getItem("preloaderShown");
+  });
+
   useEffect(() => {
-    const tl = gsap.timeline();
+    if (!showPreloader) return;
+
+    // Mark preloader as shown for this session
+    sessionStorage.setItem("preloaderShown", "true");
+
+    const tl = gsap.timeline({
+      onComplete: () => setShowPreloader(false),
+    });
 
     tl.to(".loader-logo", {
       opacity: 1,
-      duration: 0.8,
+      scale: 1,
+      duration: 0.6,
       ease: "power2.out",
     })
       .to(
         ".loader-line",
         {
           scaleX: 1,
-          duration: 1.5,
+          duration: 1,
           ease: "expo.inOut",
         },
-        "-=0.3"
-      )
-      .to(
-        ".loader-text",
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power3.out",
-        },
-        "-=0.8"
+        "-=0.3",
       )
       .to(".loader-container", {
         yPercent: -100,
-        duration: 1.2,
+        duration: 0.8,
         ease: "power4.inOut",
-        delay: 0.5,
+        delay: 0.2,
       });
-  }, []);
+  }, [showPreloader]);
 
   return (
     <div className="relative w-full min-h-screen bg-secondary cursor-none text-primary font-sans selection:bg-accent selection:text-white">
@@ -152,25 +160,22 @@ const AppContent: React.FC = () => {
       <PageTransitionOverlay />
 
       {/* Initial Loader Overlay */}
-      <div className="loader-container fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center text-primary">
-        <div className="overflow-hidden mb-4">
-          <img
-            src="/logo/logo-Mabau.png"
-            alt="MA Bau Logo"
-            width="96"
-            height="89"
-            className="loader-logo w-24 h-24 object-contain opacity-0"
-          />
+      {showPreloader && (
+        <div className="loader-container fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center text-primary">
+          <div className="overflow-hidden mb-6">
+            <img
+              src="/logo/logo-Mabau.png"
+              alt="MA Bau Logo"
+              width="150"
+              height="139"
+              className="loader-logo w-[150px] h-[139px] object-contain opacity-0"
+            />
+          </div>
+          <div className="w-64 h-[2px] bg-primary/10 overflow-hidden">
+            <div className="loader-line w-full h-full bg-accent transform scale-x-0 origin-left"></div>
+          </div>
         </div>
-        <div className="overflow-hidden mb-8">
-          <h1 className="loader-text text-4xl font-serif italic opacity-0 transform translate-y-10">
-            MA Bau GmbH
-          </h1>
-        </div>
-        <div className="w-64 h-[1px] bg-primary/20 overflow-hidden">
-          <div className="loader-line w-full h-full bg-accent transform scale-x-0 origin-left"></div>
-        </div>
-      </div>
+      )}
 
       <Navbar />
 

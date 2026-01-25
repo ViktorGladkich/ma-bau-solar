@@ -273,7 +273,7 @@ export const ServicesSection: React.FC = () => {
           </p>
           <Link
             to="/expertise"
-            className="group inline-flex items-center gap-4 bg-primary text-white px-10 py-5 text-sm uppercase tracking-[0.2em] hover:bg-accent transition-all duration-500 relative overflow-hidden"
+            className="group inline-flex items-center gap-4 bg-primary text-white px-6 py-3 md:px-10 md:py-5 text-sm uppercase tracking-[0.2em] hover:bg-accent transition-all duration-500 relative overflow-hidden"
           >
             <span className="relative z-10">Alle Leistungen ansehen</span>
             <ArrowRight

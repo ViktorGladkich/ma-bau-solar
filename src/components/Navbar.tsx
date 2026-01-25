@@ -94,15 +94,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Typographic Lockup */}
-            <div
-              className={`hidden md:flex flex-col justify-center transition-opacity duration-700 ${
-                scrolled ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              <span className="text-lg md:text-2xl font-sans font-bold leading-none tracking-tight uppercase">
-                MA Bau
-              </span>
-            </div>
+           
           </Link>
 
           <div className="flex items-center gap-8">

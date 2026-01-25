@@ -1,5 +1,5 @@
 {
-  "name": "MA Bau GmbH - Photovoltaik & Bau Dresden",
+  "name": "MA Bau GmbH",
   "short_name": "MA Bau",
   "icons": [
     {
@@ -16,6 +16,6 @@
     }
   ],
   "theme_color": "#1a1a1a",
-  "background_color": "#efede8",
+  "background_color": "#1a1a1a",
   "display": "standalone"
 }
