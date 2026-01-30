@@ -54,29 +54,14 @@ export const milestones: Milestone[] = [
 
 export const team: TeamMember[] = [
   {
-    name: "Geschäftsführung",
-    role: "Management",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop",
+    name: "Geschäftsführer",
+    role: "Management & Strategie",
+    img: "/uberUns/geschäftsführer.jpeg",
   },
   {
-    name: "Projektleitung",
-    role: "Planung & Koordination",
-    img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2787&auto=format&fit=crop",
-  },
-  {
-    name: "Technik",
-    role: "Technische Leitung",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2670&auto=format&fit=crop",
-  },
-  {
-    name: "Montage",
-    role: "Montageleitung",
-    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2561&auto=format&fit=crop",
-  },
-  {
-    name: "Service",
-    role: "Kundenbetreuung",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2574&auto=format&fit=crop",
+    name: "Gesellschafter",
+    role: "Partner & Entwicklung",
+    img: "/uberUns/gesellschafter.jpeg",
   },
 ];
 

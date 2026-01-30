@@ -1,14 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SEO } from "../components/SEO";
 import { Link } from "react-router-dom";
 import heroAbout from "../assets/heroAbout.jpg";
-import { milestones, awards } from "../data/aboutPageData";
+import { milestones, awards, team } from "../data/aboutPageData";
+import { Plus } from "lucide-react";
 
 export const AboutPage: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
+  const [hoveredMember, setHoveredMember] = useState<number | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -30,13 +32,13 @@ export const AboutPage: React.FC = () => {
           stagger: 0.05,
           ease: "back.out(1.7)",
           delay: 0.2,
-        }
+        },
       );
 
       gsap.fromTo(
         ".hero-sub",
         { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, delay: 1, ease: "power2.out" }
+        { y: 0, opacity: 1, duration: 1, delay: 1, ease: "power2.out" },
       );
 
       // 2. Manifesto Highlight
@@ -55,7 +57,7 @@ export const AboutPage: React.FC = () => {
               end: "bottom 50%",
               scrub: true,
             },
-          }
+          },
         );
       }
 
@@ -82,7 +84,7 @@ export const AboutPage: React.FC = () => {
                 gsap.fromTo(
                   "#sticky-year",
                   { y: 20, opacity: 0 },
-                  { y: 0, opacity: 1, duration: 0.4 }
+                  { y: 0, opacity: 1, duration: 0.4 },
                 );
               },
               onEnterBack: () => {
@@ -91,7 +93,7 @@ export const AboutPage: React.FC = () => {
                 gsap.fromTo(
                   "#sticky-year",
                   { y: -20, opacity: 0 },
-                  { y: 0, opacity: 1, duration: 0.4 }
+                  { y: 0, opacity: 1, duration: 0.4 },
                 );
               },
             });
@@ -109,7 +111,7 @@ export const AboutPage: React.FC = () => {
             opacity: 1,
             duration: 0.8,
             scrollTrigger: { trigger: row, start: "top 90%" },
-          }
+          },
         );
       });
 
@@ -125,7 +127,7 @@ export const AboutPage: React.FC = () => {
             ease: "power2.out",
             snap: { innerText: 1 },
             scrollTrigger: { trigger: stat, start: "top 85%" },
-          }
+          },
         );
       });
 
@@ -144,7 +146,7 @@ export const AboutPage: React.FC = () => {
               start: "top 85%",
               toggleActions: "play none none reverse",
             },
-          }
+          },
         );
       });
 
@@ -171,7 +173,7 @@ export const AboutPage: React.FC = () => {
                 toggleActions: "play none none reverse",
               },
               delay: index * 0.1,
-            }
+            },
           );
         });
 
@@ -193,7 +195,7 @@ export const AboutPage: React.FC = () => {
               start: "top 90%",
             },
             delay: index * 0.1,
-          }
+          },
         );
       });
 
@@ -216,7 +218,7 @@ export const AboutPage: React.FC = () => {
             trigger: ".stats-grid",
             start: "top 80%",
           },
-        }
+        },
       );
 
       // 10. CTA section reveal
@@ -235,7 +237,7 @@ export const AboutPage: React.FC = () => {
             trigger: ".cta-section",
             start: "top 80%",
           },
-        }
+        },
       );
 
       // 11. Awards header animation
@@ -254,7 +256,7 @@ export const AboutPage: React.FC = () => {
             trigger: ".awards-section",
             start: "top 80%",
           },
-        }
+        },
       );
     }, containerRef);
 
@@ -425,7 +427,7 @@ export const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        {/* --- 4. TEAM (INTERACTIVE LIST) --- TEMPORARILY COMMENTED OUT
+        {/* --- 4. TEAM (INTERACTIVE LIST) --- */}
         <section className="py-24 md:py-32 bg-[#EAE7DF] text-[#111]">
           <div className="container mx-auto px-6 md:px-12">
             <div className="flex justify-between items-end mb-16 md:mb-24">
@@ -470,7 +472,7 @@ export const AboutPage: React.FC = () => {
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute bottom-2 left-2 bg-white/80 px-2 py-1 text-[10px] uppercase tracking-widest font-bold">
-                        Berlin Studio
+                        Dresden Studio
                       </div>
                     </div>
                   </div>
@@ -478,7 +480,7 @@ export const AboutPage: React.FC = () => {
                 <div className="border-t border-[#111]/10"></div>
               </div>
 
-              <div className="hidden lg:block fixed top-1/2 right-[15vw] w-[300px] h-[400px] pointer-events-none z-20 mix-blend-multiply transform -translate-y-1/2">
+              <div className="hidden lg:block fixed top-1/2 right-[15vw] w-[300px] h-[400px] pointer-events-none z-20 transform -translate-y-1/2">
                 {team.map((member, index) => (
                   <img
                     key={index}
@@ -495,7 +497,6 @@ export const AboutPage: React.FC = () => {
             </div>
           </div>
         </section>
-        */}
 
         {/* --- 5. STATS --- */}
         <section className="py-24 md:py-32 bg-[#111] border-t border-white/5">
