@@ -52,7 +52,7 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { name: "Startseite", to: "/", label: "01" },
     { name: "Projekte", to: "/projects", label: "02" },
-    { name: "Leistungen", to: "/expertise", label: "03" },
+    { name: "Leistungen", to: "/leistungen", label: "03" },
     { name: "Über uns", to: "/about", label: "04" },
     { name: "Kontakt", to: "/contact", label: "05" },
   ];
@@ -94,7 +94,6 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Typographic Lockup */}
-           
           </Link>
 
           <div className="flex items-center gap-8">

@@ -42,7 +42,7 @@ export const ProjectsPage: React.FC = () => {
             stagger: 0.05,
             ease: "power4.out",
             delay: 0.2,
-          }
+          },
         );
       }
 
@@ -57,7 +57,7 @@ export const ProjectsPage: React.FC = () => {
           delay: 0.8,
           ease: "power2.out",
           stagger: 0.1,
-        }
+        },
       );
 
       // 3. Grid Items Entrance & Parallax
@@ -77,7 +77,7 @@ export const ProjectsPage: React.FC = () => {
               trigger: el,
               start: "top 95%", // Earlier start to ensure visibility
             },
-          }
+          },
         );
 
         // Internal Image Parallax
@@ -95,7 +95,7 @@ export const ProjectsPage: React.FC = () => {
                 end: "bottom top",
                 scrub: 1,
               },
-            }
+            },
           );
         }
       });
@@ -194,7 +194,10 @@ export const ProjectsPage: React.FC = () => {
                     index % 2 === 1 ? "md:mt-32" : ""
                   }`}
                 >
-                  <Link to={`/projects/${project.id}`} className="block group">
+                  <Link
+                    to={`/projects/${project.slug}`}
+                    className="block group"
+                  >
                     {/* Image Wrapper */}
                     <div className="relative aspect-[3/4] md:aspect-[3/4] overflow-hidden bg-white mb-4 md:mb-8 rounded-lg md:rounded-xl shadow-md">
                       {/* Overlay */}

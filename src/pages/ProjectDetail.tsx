@@ -9,12 +9,13 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { SEO } from "../components/SEO";
 
 export const ProjectDetail: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const project = projectsData.find((p: ProjectData) => p.id === Number(id));
+  const project = projectsData.find((p: ProjectData) => p.slug === slug);
   const nextProject = projectsData.find(
-    (p: ProjectData) => p.id === (Number(id) % projectsData.length) + 1
+    (p: ProjectData) =>
+      p.id === (project ? (project.id % projectsData.length) + 1 : 1),
   );
 
   useEffect(() => {
@@ -45,7 +46,7 @@ export const ProjectDetail: React.FC = () => {
             stagger: 0.1,
             ease: "power3.out",
             delay: 0.5,
-          }
+          },
         );
 
         // Gallery Fade Up
@@ -64,13 +65,13 @@ export const ProjectDetail: React.FC = () => {
                   trigger: wrapper,
                   start: "top 80%",
                 },
-              }
+              },
             );
           });
       }, containerRef);
       return () => ctx.revert();
     }
-  }, [id, project]);
+  }, [slug, project]);
 
   if (!project) {
     return (
@@ -188,7 +189,7 @@ export const ProjectDetail: React.FC = () => {
         {/* Next Project Footer */}
         {nextProject && (
           <Link
-            to={`/projects/${nextProject.id}`}
+            to={`/projects/${nextProject.slug}`}
             className="block relative group h-[40vh] overflow-hidden"
           >
             <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-black/30 transition-colors"></div>

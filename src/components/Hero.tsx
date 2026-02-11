@@ -11,7 +11,17 @@ const heroVideo =
 const heroVideoThumbnail =
   "https://res.cloudinary.com/dcphhfemb/video/upload/q_auto:good,w_1920/v1767643382/hero_vyelws.jpg";
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  title?: React.ReactNode;
+  subtitle?: string;
+  description?: string;
+}
+
+export const Hero: React.FC<HeroProps> = ({
+  title,
+  subtitle = "MA Bau GmbH – Bau & Energie",
+  description = "Von Photovoltaik bis Renovierung – wir setzen Ihre Projekte professionell und zuverlässig um.",
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -174,19 +184,22 @@ export const Hero: React.FC = () => {
             <div className="flex items-center gap-3 mb-6 opacity-80">
               <div className="h-[1px] w-8 bg-accent"></div>
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent">
-                MA Bau GmbH – Bau & Energie
+                {subtitle}
               </span>
             </div>
 
             <h1 className="text-5xl font-serif leading-[1.05] mb-6 drop-shadow-lg">
-              Bauen.
-              <br />
-              <span className="italic text-accent">Gestalten.</span>
+              {title || (
+                <>
+                  Bauen.
+                  <br />
+                  <span className="italic text-accent">Gestalten.</span>
+                </>
+              )}
             </h1>
 
             <p className="text-white/80 font-light text-base leading-relaxed max-w-xs mb-10 drop-shadow-md">
-              Von Photovoltaik bis Renovierung – Ihre Projekte professionell und
-              zuverlässig umgesetzt.
+              {description}
             </p>
 
             {/* Scroll Indicator */}
@@ -207,16 +220,19 @@ export const Hero: React.FC = () => {
           <div className="hero-initial-text absolute top-0 left-0 w-[45%] h-full flex flex-col justify-center px-12 lg:px-24 z-10 bg-white will-change-transform">
             <div className="overflow-hidden">
               <span className="block text-xs font-bold uppercase tracking-widest text-accent mb-6">
-                MA Bau GmbH – Bau & Energie
+                {subtitle}
               </span>
             </div>
             <h1 className="text-7xl lg:text-8xl font-serif text-primary leading-[1.05] mb-8">
-              Bauen. <br />
-              <span className="italic text-accent">Gestalten.</span>
+              {title || (
+                <>
+                  Bauen. <br />
+                  <span className="italic text-accent">Gestalten.</span>
+                </>
+              )}
             </h1>
             <p className="text-primary/60 font-light max-w-md leading-relaxed text-lg">
-              Von Photovoltaik bis Renovierung – wir setzen Ihre Projekte
-              professionell und zuverlässig um.
+              {description}
             </p>
 
             <div className="scroll-prompt mt-20 flex items-center gap-4 text-primary/30">

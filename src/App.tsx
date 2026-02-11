@@ -115,6 +115,14 @@ const LoadingSpinner = () => (
   </div>
 );
 
+const LocalSeoPage = lazy(() =>
+  import("./pages/LocalSeoPage").then((module) => ({
+    default: module.LocalSeoPage,
+  })),
+);
+
+// ... (keep creating Overlay etc.) ...
+
 const AppContent: React.FC = () => {
   const [showPreloader, setShowPreloader] = React.useState(() => {
     return !sessionStorage.getItem("preloaderShown");
@@ -184,9 +192,28 @@ const AppContent: React.FC = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/expertise" element={<ExpertisePage />} />
+            <Route path="/leistungen" element={<ExpertisePage />} />
             <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/projects/:id" element={<ProjectDetail />} />
+            <Route path="/projects/:slug" element={<ProjectDetail />} />
+
+            {/* Local SEO Landing Pages */}
+            <Route
+              path="/bauunternehmen-dresden"
+              element={<LocalSeoPage service="Bauunternehmen" city="Dresden" />}
+            />
+            <Route
+              path="/sanierung-dresden"
+              element={<LocalSeoPage service="Sanierung" city="Dresden" />}
+            />
+            <Route
+              path="/innenausbau-dresden"
+              element={<LocalSeoPage service="Innenausbau" city="Dresden" />}
+            />
+            <Route
+              path="/trockenbau-dresden"
+              element={<LocalSeoPage service="Trockenbau" city="Dresden" />}
+            />
+
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/impressum" element={<ImpressumPage />} />
             <Route path="/datenschutz" element={<DatenschutzPage />} />

@@ -3,7 +3,7 @@ import type { ProjectData } from "../types";
 export const projectsData: ProjectData[] = [
   {
     id: 1,
-    slug: "industrie-sattlend-oesterreich",
+    slug: "photovoltaik-industrie-sattlend",
     title: "Industrieanlage Sattlend",
     category: "Industrie",
     year: "2024",
@@ -24,7 +24,7 @@ export const projectsData: ProjectData[] = [
   },
   {
     id: 2,
-    slug: "industrie-reinfeld",
+    slug: "photovoltaik-industrie-reinfeld",
     title: "Industrieanlage Reinfeld",
     category: "Industrie",
     year: "2024",
@@ -45,7 +45,7 @@ export const projectsData: ProjectData[] = [
   },
   {
     id: 3,
-    slug: "freiflaeche-barchfeld",
+    slug: "solarpark-freiflaeche-barchfeld",
     title: "Freifläche Barchfeld",
     category: "Freifläche",
     year: "2024",
@@ -66,7 +66,7 @@ export const projectsData: ProjectData[] = [
   },
   {
     id: 4,
-    slug: "gewerbe-wuppertal",
+    slug: "gewerbe-solaranlage-wuppertal",
     title: "Gewerbeanlage Wuppertal",
     category: "Gewerbe",
     year: "2024",
@@ -87,7 +87,7 @@ export const projectsData: ProjectData[] = [
   },
   {
     id: 5,
-    slug: "lagerhalle-tempelhof",
+    slug: "photovoltaik-speicher-berlin-tempelhof",
     title: "Lagerhalle Tempelhof",
     category: "Industrie",
     year: "2022",
@@ -108,7 +108,7 @@ export const projectsData: ProjectData[] = [
   },
   {
     id: 6,
-    slug: "gewerbe-norderstedt",
+    slug: "gewerbe-pv-anlage-norderstedt",
     title: "Gewerbeanlage Norderstedt",
     category: "Gewerbe",
     year: "2024",
@@ -129,7 +129,7 @@ export const projectsData: ProjectData[] = [
   },
   {
     id: 7,
-    slug: "wohngebaeude-berlin",
+    slug: "solaranlage-wohnhaus-berlin",
     title: "Wohngebäude Berlin",
     category: "Wohngebäude",
     year: "2024",
