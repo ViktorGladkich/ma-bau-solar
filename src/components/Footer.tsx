@@ -153,23 +153,6 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* --- MAP SECTION --- */}
-        <div className="w-full h-64 md:h-80 rounded-sm overflow-hidden mb-16 border border-primary/10 relative group">
-          <iframe
-            src="https://maps.google.com/maps?q=Rubensweg+1,+01217+Dresden&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            width="100%"
-            height="100%"
-            style={{
-              border: 0,
-              filter: "grayscale(100%)",
-            }}
-            allowFullScreen={false}
-            loading="lazy"
-            className="group-hover:filter-none transition-all duration-500"
-            title="Standortkarte MA Bau GmbH"
-          ></iframe>
-        </div>
-
         {/* --- BOTTOM SECTION --- */}
         <div className="pt-8 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium">
           <div className="text-primary/40">
