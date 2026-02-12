@@ -156,7 +156,7 @@ export const Footer: React.FC = () => {
         {/* --- MAP SECTION --- */}
         <div className="w-full h-64 md:h-80 rounded-sm overflow-hidden mb-16 border border-primary/10 relative group">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2509.356238712218!2d13.753856!3d51.028028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4709c5f6db225555%3A0x6a0a09e0785f7e0!2sRubensweg%201%2C%2001217%20Dresden!5e0!3m2!1sde!2sde!4v1707567890123!5m2!1sde!2sde"
+            src="https://maps.google.com/maps?q=Rubensweg+1,+01217+Dresden&t=&z=15&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style={{
@@ -165,7 +165,6 @@ export const Footer: React.FC = () => {
             }}
             allowFullScreen={false}
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
             className="group-hover:filter-none transition-all duration-500"
             title="Standortkarte MA Bau GmbH"
           ></iframe>
