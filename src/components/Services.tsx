@@ -48,7 +48,7 @@ export const Services: React.FC = () => {
               end: "bottom 15%",
               toggleActions: "play reverse play reverse",
             },
-          }
+          },
         );
       });
     }, containerRef);
@@ -76,7 +76,7 @@ export const Services: React.FC = () => {
           </h2>
           <div className="animate-text">
             <Link
-              to="/expertise"
+              to="/leistungen"
               className="inline-flex items-center gap-2 text-sm uppercase tracking-widest border-b border-primary/30 pb-1 hover:text-accent hover:border-accent transition-colors"
             >
               Unser Prozess im Detail <ArrowRight size={14} />

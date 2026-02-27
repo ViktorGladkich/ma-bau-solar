@@ -14,21 +14,26 @@ export const ServicesSection: React.FC = () => {
       // Animate service cards
       const serviceCards = gsap.utils.toArray<HTMLElement>(".service-card");
       serviceCards.forEach((card, index) => {
+        const xOffset = index === 0 ? -100 : index === 1 ? 100 : 0;
+        const yOffset = index === 2 ? 100 : 0;
+
         gsap.fromTo(
           card,
           {
             opacity: 0,
-            y: 30,
+            x: xOffset,
+            y: index < 2 ? 0 : yOffset, // Ensure y is 0 for first two if they have x offset
           },
           {
             opacity: 1,
+            x: 0,
             y: 0,
-            duration: 0.6,
-            delay: index * 0.1,
-            ease: "power2.out",
+            duration: 1.2,
+            delay: index * 0.15,
+            ease: "power3.out",
             scrollTrigger: {
               trigger: card,
-              start: "top 85%",
+              start: "top 90%",
               toggleActions: "play none none none",
             },
           },
@@ -72,8 +77,8 @@ export const ServicesSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 mb-8">
           {/* Service 1: Photovoltaik - Large Featured Card */}
           <Link
-            to="/expertise"
-            className="service-card lg:col-span-7 group relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary/90 rounded-sm min-h-[500px] md:min-h-[600px] flex flex-col justify-end p-8 md:p-12 transition-all duration-700 hover:shadow-2xl cursor-pointer"
+            to="/leistungen"
+            className="service-card lg:col-span-7 group relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary/90 rounded-sm min-h-[500px] md:min-h-[600px] flex flex-col justify-end p-8 md:p-12 transition-[box-shadow] duration-700 hover:shadow-2xl cursor-pointer opacity-0"
           >
             {/* Animated Background Pattern */}
             <div className="absolute inset-0 opacity-10">
@@ -145,8 +150,8 @@ export const ServicesSection: React.FC = () => {
 
           {/* Service 2: Renovierung - Medium Card */}
           <Link
-            to="/expertise"
-            className="service-card lg:col-span-5 group relative overflow-hidden bg-white border border-primary/10 rounded-sm min-h-[500px] md:min-h-[600px] flex flex-col justify-end p-8 md:p-10 transition-all duration-700 hover:shadow-2xl hover:border-accent/30 cursor-pointer"
+            to="/leistungen"
+            className="service-card lg:col-span-5 group relative overflow-hidden bg-white border border-primary/10 rounded-sm min-h-[500px] md:min-h-[600px] flex flex-col justify-end p-8 md:p-10 transition-[box-shadow,border-color] duration-700 hover:shadow-2xl hover:border-accent/30 cursor-pointer opacity-0"
           >
             {/* Decorative Element */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-accent/10 to-transparent rounded-bl-full"></div>
@@ -197,8 +202,8 @@ export const ServicesSection: React.FC = () => {
 
         {/* Service 3: Bauarbeiten & Handwerk - Full Width Card */}
         <Link
-          to="/expertise"
-          className="service-card group relative overflow-hidden bg-gradient-to-r from-secondary via-white to-secondary border border-primary/10 rounded-sm min-h-[400px] flex flex-col md:flex-row items-end md:items-center justify-between p-8 md:p-12 transition-all duration-700 hover:shadow-2xl hover:border-accent/30 cursor-pointer"
+          to="/leistungen"
+          className="service-card group relative overflow-hidden bg-gradient-to-r from-secondary via-white to-secondary border border-primary/10 rounded-sm min-h-[400px] flex flex-col md:flex-row items-end md:items-center justify-between p-8 md:p-12 transition-[box-shadow,border-color] duration-700 hover:shadow-2xl hover:border-accent/30 cursor-pointer opacity-0"
         >
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-[0.02]">
@@ -272,7 +277,7 @@ export const ServicesSection: React.FC = () => {
             Interessiert an unseren Leistungen?
           </p>
           <Link
-            to="/expertise"
+            to="/leistungen"
             className="group inline-flex items-center gap-4 bg-primary text-white px-6 py-3 md:px-10 md:py-5 text-sm uppercase tracking-[0.2em] hover:bg-accent transition-all duration-500 relative overflow-hidden"
           >
             <span className="relative z-10">Alle Leistungen ansehen</span>
