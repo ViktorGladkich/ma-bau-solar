@@ -148,4 +148,25 @@ export const projectsData: ProjectData[] = [
       "/projects/78kWp_Berlin4.jpg",
     ],
   },
+  {
+    id: 8,
+    slug: "solaranlage-gewerbe-neuenburg",
+    title: "Gewerbeanlage Neuenburg",
+    category: "Gewerbe",
+    year: "2026",
+    location: "Neuenburg am Rhein, Deutschland",
+    kWp: "161,10 kWp",
+    client: "",
+    imageUrl: "/projects/161:10kWp_Rhein.jpg",
+    description: "161,10 kWp Gewerbeanlage in der Otto-Hahn-Straße 11, Neuenburg am Rhein.",
+    challenge:
+      "Installation einer modernen PV-Anlage auf einem Gewerbegebäude unter Berücksichtigung der statischen Anforderungen und optimaler Platzausnutzung.",
+    solution:
+      "Professionelle Montage mit hochwertigen Komponenten und präziser Planung für maximalen Energieertrag im gewerblichen Bereich.",
+    gallery: [
+      "/projects/161:10kWp_Rhein2.jpg",
+      "/projects/161:10kWp_Rhein3.jpg",
+      "/projects/161:10kWp_Rhein4.jpg",
+    ],
+  }
 ];
