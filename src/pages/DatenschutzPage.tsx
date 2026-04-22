@@ -244,7 +244,28 @@ export const DatenschutzPage: React.FC = () => {
                 Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein
                 Beschwerderecht bei einer Aufsichtsbehörde zu. Das
                 Beschwerderecht besteht unbeschadet anderweitiger
-                verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.
+                verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe. Die für
+                uns zuständige Aufsichtsbehörde ist:
+              </p>
+              <p className="mb-4">
+                Der Sächsische Datenschutzbeauftragte
+                <br />
+                Devrientstraße 5<br />
+                01067 Dresden
+                <br />
+                Tel.: +49 351 85471 101
+                <br />
+                E-Mail: saechsdsb@slt.sachsen.de
+                <br />
+                Website:{" "}
+                <a
+                  href="https://www.saechsdsb.de"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:underline"
+                >
+                  www.saechsdsb.de
+                </a>
               </p>
 
               <h3 className="font-bold mb-2">Recht auf Datenübertragbarkeit</h3>
@@ -269,10 +290,26 @@ export const DatenschutzPage: React.FC = () => {
               <h3 className="font-bold mb-2">
                 Recht auf Einschränkung der Verarbeitung
               </h3>
-              <p>
+              <p className="mb-4">
                 Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer
                 personenbezogenen Daten zu verlangen. Hierzu können Sie sich
                 jederzeit an uns wenden.
+              </p>
+
+              <h3 className="font-bold mb-2">
+                Widerspruchsrecht (Art. 21 DSGVO)
+              </h3>
+              <p>
+                Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen
+                Situation ergeben, jederzeit gegen die Verarbeitung der Sie
+                betreffenden personenbezogenen Daten, die aufgrund von Art. 6
+                Abs. 1 lit. f DSGVO (berechtigtes Interesse) erfolgt,
+                Widerspruch einzulegen. Wenn Sie Widerspruch einlegen, werden
+                wir Ihre personenbezogenen Daten nicht mehr verarbeiten, es sei
+                denn, wir können zwingende schutzwürdige Gründe für die
+                Verarbeitung nachweisen, die Ihre Interessen, Rechte und
+                Freiheiten überwiegen, oder die Verarbeitung dient der
+                Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen.
               </p>
             </section>
 
@@ -306,7 +343,9 @@ export const DatenschutzPage: React.FC = () => {
                 Daten (Name, E-Mail, Nachricht) über eine sichere Verbindung an
                 Web3Forms übermittelt und anschließend an unsere E-Mail-Adresse
                 weitergeleitet. Web3Forms speichert keine personenbezogenen
-                Daten dauerhaft. Weitere Informationen finden Sie in der
+                Daten dauerhaft. Die Datenübermittlung in die USA erfolgt auf
+                Grundlage von Standardvertragsklauseln (SCC) gemäß Art. 46 Abs.
+                2 lit. c DSGVO. Weitere Informationen finden Sie in der
                 Datenschutzerklärung von Web3Forms:{" "}
                 <a
                   href="https://web3forms.com/privacy"
@@ -437,6 +476,12 @@ export const DatenschutzPage: React.FC = () => {
                 ermöglichen. Der Chatbot nutzt Google Gemini AI zur Verarbeitung
                 Ihrer Anfragen.
               </p>
+              <p className="mb-4">
+                <strong>Hinweis gemäß Art. 50 KI-Verordnung (EU AI Act):</strong>{" "}
+                Bei der Nutzung des Chatbots interagieren Sie mit einem
+                KI-System, nicht mit einem Menschen. Dieser Hinweis wird Ihnen
+                zu Beginn jeder Chatinteraktion angezeigt.
+              </p>
               <h3 className="font-bold mb-2">Welche Daten werden erfasst?</h3>
               <p className="mb-4">
                 Bei der Nutzung des Chatbots werden folgende Daten erfasst:
@@ -457,8 +502,9 @@ export const DatenschutzPage: React.FC = () => {
               <h3 className="font-bold mb-2">Datenübermittlung</h3>
               <p>
                 Die Chat-Nachrichten werden zur Verarbeitung an Google (Gemini
-                AI) übermittelt. Google verarbeitet diese Daten gemäß ihrer
-                Datenschutzbestimmungen:{" "}
+                AI) in die USA übermittelt. Google ist unter dem EU-US Data
+                Privacy Framework zertifiziert (Art. 45 DSGVO). Google
+                verarbeitet diese Daten gemäß ihrer Datenschutzbestimmungen:{" "}
                 <a
                   href="https://policies.google.com/privacy"
                   target="_blank"
